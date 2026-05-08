@@ -1,0 +1,996 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Andrés Echeverry · Portfolio · Senior Software Engineer & Technical Lead</title>
+<meta name="description" content="Andrés Echeverry · Senior Software Engineer · Technical Lead. Multi-tenant platforms, AI agents, secure infrastructure, ML in production." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1A2F4E;--navy-2:#0F1E36;
+  --sage:#2D6E5E;--sage-soft:#E8F0EC;
+  --cream:#FAF7F2;--cream-2:#F2EEE6;
+  --line:#E0DACC;--line-2:#CFC8B8;
+  --ink:#1A2F4E;--ink-soft:#3F506B;--muted:#7A8395;
+  --red:#B23A3A;--gold:#C99A3D;
+  --shadow:0 1px 0 rgba(26,47,78,.04), 0 8px 30px rgba(26,47,78,.06);
+  --shadow-lift:0 2px 0 rgba(26,47,78,.05), 0 24px 60px rgba(26,47,78,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,system-ui,-apple-system,sans-serif;font-size:16px;line-height:1.6;color:var(--ink);background:var(--cream);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+::selection{background:var(--sage);color:#fff}
+
+.dots{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle, rgba(45,110,94,.18) 1px, transparent 1.4px);background-size:22px 22px;animation:drift 60s linear infinite;opacity:.6}
+@keyframes drift{0%{background-position:0 0}100%{background-position:220px 220px}}
+.bg-blob{position:fixed;width:600px;height:600px;border-radius:50%;filter:blur(120px);opacity:.18;z-index:-1;pointer-events:none;background:radial-gradient(circle, var(--sage), transparent 70%);animation:float 18s ease-in-out infinite}
+.bg-blob.b2{top:60%;right:-200px;background:radial-gradient(circle, var(--navy), transparent 70%);opacity:.10;animation-duration:24s;animation-delay:-6s}
+.bg-blob.b1{top:-200px;left:-150px}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,40px) scale(1.08)}}
+
+.topbar{position:sticky;top:0;z-index:50;background:var(--navy);color:#cbd5e3;padding:12px 32px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:1px solid rgba(255,255,255,.06)}
+.topbar .pulse{display:inline-block;width:7px;height:7px;border-radius:50%;background:#7FE3B5;margin-right:8px;box-shadow:0 0 10px #7FE3B5;animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.topbar a{color:inherit;text-decoration:none;opacity:.75;transition:opacity .2s}
+.topbar a:hover{opacity:1;color:#fff}
+.topbar .right{display:flex;align-items:center;gap:24px}
+.topbar .nav-links{display:flex;gap:24px}
+@media(max-width:760px){.topbar .nav-links{display:none}}
+
+.lang-switch{display:inline-flex;align-items:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:999px;padding:3px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.14em;user-select:none;line-height:1;gap:0}
+.lang-switch button{appearance:none;background:transparent;border:0;color:#9FB1C8;font:inherit;letter-spacing:inherit;text-transform:uppercase;padding:6px 14px;border-radius:999px;cursor:pointer;transition:background .25s,color .25s;line-height:1;font-weight:600;white-space:nowrap}
+.lang-switch button:hover{color:#fff}
+.lang-switch button.active{background:#7FE3B5;color:var(--navy-2)}
+.lang-switch button.active:hover{color:var(--navy-2)}
+
+.wrap{max-width:1100px;margin:0 auto;padding:0 32px}
+
+.hero{padding:96px 0 64px;text-align:center;position:relative}
+.hero .role-bar{
+  display:inline-flex;align-items:center;gap:14px;
+  background:linear-gradient(180deg,#fff 0%, #FBF9F4 100%);
+  border:1px solid var(--line);
+  padding:14px 28px;border-radius:999px;
+  font-family:'JetBrains Mono',monospace;
+  font-size:14px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--navy);font-weight:500;
+  margin-bottom:40px;
+  box-shadow:var(--shadow-lift);
+}
+.hero .role-bar .dot{width:9px;height:9px;background:var(--sage);border-radius:50%;animation:pulse 2s ease-in-out infinite;box-shadow:0 0 12px rgba(45,110,94,.5)}
+@media(max-width:680px){
+  .hero .role-bar{font-size:11px;letter-spacing:.14em;padding:11px 18px;gap:10px;flex-wrap:wrap;justify-content:center}
+}
+.hero h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(48px,8vw,96px);line-height:1;margin:0 0 8px;color:var(--navy);letter-spacing:-.02em}
+.hero h2{font-family:'Playfair Display',serif;font-style:italic;font-weight:500;font-size:clamp(28px,4.5vw,48px);margin:0 0 28px;color:var(--sage);letter-spacing:-.01em}
+.hero h2 span{display:block}
+.hero p.lede{max-width:620px;margin:0 auto 56px;color:var(--ink-soft);font-size:18px;line-height:1.7}
+.hero .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;max-width:760px;margin:0 auto;border-top:1px solid var(--line-2);padding-top:36px}
+.stat{padding:0 16px}
+.stat .num{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(40px,5vw,64px);line-height:1;color:var(--navy);letter-spacing:-.02em;display:block}
+.stat .num .plus{color:var(--sage);font-weight:700}
+.stat .lab{margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:680px){.hero .stats{grid-template-columns:1fr;gap:24px}}
+
+.divider{display:flex;align-items:center;gap:20px;margin:80px auto;max-width:240px}
+.divider .line{flex:1;height:1px;background:var(--line-2)}
+.divider .mark{font-family:'Playfair Display',serif;color:var(--sage);font-style:italic;font-size:20px}
+
+.sect{padding:64px 0;position:relative}
+.sect-mark{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.sect-mark .dot{width:6px;height:6px;background:var(--sage);border-radius:50%}
+.sect h3{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(34px,4.5vw,52px);line-height:1.05;margin:0 0 12px;color:var(--navy);letter-spacing:-.015em}
+.sect h3 em{font-style:italic;color:var(--sage);font-weight:500}
+.sect .blurb{max-width:680px;color:var(--ink-soft);font-size:17px;margin:0 0 40px}
+
+.flagship{background:linear-gradient(180deg,#fff 0%, #FBF9F4 100%);border:1px solid var(--line);border-radius:18px;padding:48px;position:relative;overflow:hidden;box-shadow:var(--shadow-lift);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.flagship:hover{transform:translateY(-4px)}
+.flagship::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;background:linear-gradient(90deg,var(--sage),var(--navy),var(--sage));background-size:200% 100%;animation:slide 6s linear infinite}
+@keyframes slide{0%{background-position:0 0}100%{background-position:200% 0}}
+.flagship .badge{position:absolute;top:24px;right:24px;background:var(--sage);color:#fff;padding:6px 14px;border-radius:999px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase}
+.flagship h4{font-family:'Playfair Display',serif;font-weight:700;font-size:clamp(32px,4vw,44px);margin:0 0 4px;color:var(--navy)}
+.flagship .sub{font-family:'Playfair Display',serif;font-style:italic;color:var(--sage);font-size:22px;margin-bottom:24px}
+.flagship p{color:var(--ink-soft);font-size:17px;line-height:1.7;margin:0 0 24px;max-width:760px}
+.flagship .pillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:28px}
+.pill{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 18px;transition:transform .3s, border-color .3s, box-shadow .3s}
+.pill:hover{transform:translateY(-2px);border-color:var(--sage);box-shadow:0 8px 24px rgba(45,110,94,.10)}
+.pill .l{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--sage);margin-bottom:6px}
+.pill .v{font-weight:600;color:var(--navy);font-size:14px;line-height:1.4}
+.pill.ai{background:linear-gradient(180deg,#F4FBF8,#EBF7F1);border-color:#BFE2D2}
+.pill.ai .l{color:var(--sage)}
+.pill.ai .v{color:var(--navy)}
+
+/* ROS stat strip — real numbers from the codebase */
+.stat-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:32px 0 28px;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.ss{text-align:center}
+.ssn{display:block;font-family:'Playfair Display',serif;font-weight:900;color:var(--navy);font-size:38px;line-height:1;letter-spacing:-.02em}
+.ssl{margin-top:8px;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);display:block;line-height:1.4}
+@media(max-width:780px){.stat-strip{grid-template-columns:repeat(2,1fr);gap:22px}}
+
+/* Engineering signals — concrete practices in production */
+.eng-signals{margin-top:28px}
+.eng-title{font-family:'Playfair Display',serif;font-weight:700;font-size:21px;color:var(--navy);margin:0 0 6px;letter-spacing:-.01em}
+.eng-sub{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin:0 0 18px}
+.eng-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:900px){.eng-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.eng-grid{grid-template-columns:1fr}}
+.eng-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
+.eng-card::before{content:"";position:absolute;left:0;top:0;height:100%;width:2px;background:var(--sage);transform:scaleY(0);transform-origin:top;transition:transform .3s}
+.eng-card:hover{transform:translateY(-2px);border-color:var(--line-2);box-shadow:0 8px 20px rgba(26,47,78,.06)}
+.eng-card:hover::before{transform:scaleY(1)}
+.eng-h{font-weight:600;color:var(--navy);font-size:14px;margin-bottom:6px;letter-spacing:-.005em}
+.eng-d{font-size:12.5px;color:var(--ink-soft);line-height:1.55}
+.eng-d code{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--cream-2);padding:1px 5px;border-radius:4px;color:var(--navy)}
+
+.grid{display:grid;gap:24px}
+.grid-3{grid-template-columns:repeat(3,1fr)}
+.grid-2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:900px){.grid-3,.grid-2{grid-template-columns:1fr}}
+
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:28px;transition:transform .4s cubic-bezier(.2,.8,.2,1), box-shadow .4s, border-color .4s;position:relative;overflow:hidden;display:block;color:inherit;text-decoration:none}
+.card::after{content:"";position:absolute;left:0;top:0;height:100%;width:3px;background:var(--sage);transform:scaleY(0);transform-origin:top;transition:transform .4s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lift);border-color:var(--line-2)}
+.card:hover::after{transform:scaleY(1)}
+.card .ic{width:44px;height:44px;border-radius:12px;background:var(--sage-soft);color:var(--sage);display:flex;align-items:center;justify-content:center;margin-bottom:18px;font-size:22px}
+.card h5{font-family:'Playfair Display',serif;font-weight:700;font-size:22px;margin:0 0 10px;color:var(--navy);letter-spacing:-.01em}
+.card p{color:var(--ink-soft);font-size:15px;line-height:1.65;margin:0 0 14px}
+.card .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.card .tag-mono{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;background:var(--cream-2);color:var(--ink-soft);padding:5px 10px;border-radius:6px;border:1px solid var(--line)}
+.card .outcome{display:flex;align-items:flex-start;gap:10px;background:linear-gradient(180deg,var(--sage-soft) 0%, transparent 100%);border-left:3px solid var(--sage);padding:12px 14px;border-radius:0 8px 8px 0;font-size:14px;color:var(--navy);font-weight:500;margin:14px 0;line-height:1.55}
+.card .outcome b{color:var(--sage);font-weight:700}
+
+/* External link indicator */
+.card.linkable{cursor:pointer}
+.card.linkable .ext{
+  position:absolute;top:18px;right:18px;
+  width:34px;height:34px;border-radius:10px;
+  background:var(--sage-soft);color:var(--sage);
+  display:flex;align-items:center;justify-content:center;
+  font-size:14px;font-weight:700;
+  transition:all .35s cubic-bezier(.2,.8,.2,1);
+  border:1px solid transparent;
+}
+.card.linkable:hover .ext{background:var(--sage);color:#fff;transform:translate(2px,-2px) rotate(-8deg);box-shadow:0 8px 20px rgba(45,110,94,.3)}
+.card.linkable .public-tag{
+  display:inline-block;font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--sage);background:var(--sage-soft);border-radius:999px;padding:3px 8px;margin-left:8px;
+}
+
+.products{margin-top:32px;display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+@media(max-width:900px){.products{grid-template-columns:1fr}}
+.prod{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;overflow:hidden;transition:transform .4s, box-shadow .4s, border-color .4s;display:block;color:inherit;text-decoration:none}
+.prod:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift)}
+.prod.linkable:hover{border-color:var(--sage)}
+.prod .marker{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--sage);border:1px solid var(--sage);border-radius:999px;padding:4px 10px;margin-bottom:14px}
+.prod h6{font-family:'Playfair Display',serif;font-weight:700;font-size:24px;margin:0 0 8px;color:var(--navy);display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.prod p{font-size:14px;color:var(--ink-soft);margin:0 0 14px;line-height:1.6}
+.prod p b{color:var(--navy);font-weight:600}
+.prod .lic{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.prod .ext{position:absolute;top:20px;right:20px;width:30px;height:30px;border-radius:8px;background:var(--sage-soft);color:var(--sage);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;transition:all .35s cubic-bezier(.2,.8,.2,1)}
+.prod.linkable:hover .ext{background:var(--sage);color:#fff;transform:translate(2px,-2px) rotate(-8deg);box-shadow:0 8px 20px rgba(45,110,94,.3)}
+
+/* Architecture cards */
+.arch{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:980px){.arch{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:680px){.arch{grid-template-columns:1fr}}
+.arch-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s,border-color .4s}
+.arch-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lift);border-color:var(--sage)}
+.arch-card .num{font-family:'Playfair Display',serif;font-weight:900;font-size:48px;line-height:1;color:var(--sage);opacity:.25;position:absolute;top:14px;right:18px;letter-spacing:-.04em}
+.arch-card h6{font-family:'Playfair Display',serif;font-weight:700;font-size:19px;margin:0 0 10px;color:var(--navy);max-width:78%;line-height:1.25}
+.arch-card p{font-size:13.5px;color:var(--ink-soft);line-height:1.6;margin:0}
+.arch-card p b{color:var(--navy);font-weight:600}
+
+.cap{display:grid;gap:18px;grid-template-columns:repeat(2,1fr)}
+@media(max-width:780px){.cap{grid-template-columns:1fr}}
+.cap-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:26px;transition:transform .3s,box-shadow .3s}
+.cap-card:hover{transform:translateY(-3px);box-shadow:var(--shadow-lift)}
+.cap-card .ic{font-size:26px;margin-bottom:12px}
+.cap-card h6{font-family:Inter,sans-serif;font-weight:700;color:var(--navy);font-size:17px;margin:0 0 8px}
+.cap-card p{font-size:14px;color:var(--ink-soft);margin:0;line-height:1.65}
+
+.edu{display:grid;gap:14px}
+.edu-item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;transition:transform .3s,border-color .3s}
+.edu-item:hover{transform:translateX(4px);border-color:var(--sage)}
+.edu-item h6{margin:0 0 4px;color:var(--navy);font-weight:600;font-size:16px}
+.edu-item .inst{color:var(--ink-soft);font-size:14px}
+.edu-item .when{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage)}
+
+.stack-block{margin-top:24px}
+.stack-block .lab{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.stack-pills{display:flex;flex-wrap:wrap;gap:8px}
+.sp{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 14px;font-size:13px;color:var(--ink);font-weight:500;font-family:'JetBrains Mono',monospace;transition:all .25s}
+.sp:hover{background:var(--navy);color:#fff;border-color:var(--navy);transform:translateY(-2px)}
+
+.compare{background:#fff;border:1px solid var(--line);border-radius:14px;padding:32px;margin-top:24px}
+.compare .row{margin-bottom:22px}
+.compare .row:last-child{margin-bottom:0}
+.compare .lbl{display:flex;justify-content:space-between;font-size:14px;color:var(--ink);margin-bottom:8px}
+.compare .lbl b{font-weight:600}
+.compare .lbl .val{font-weight:700}
+.compare .bar{height:6px;background:var(--cream-2);border-radius:999px;overflow:hidden;position:relative}
+.compare .bar i{display:block;height:100%;width:0;border-radius:999px;background:linear-gradient(90deg,var(--navy),var(--navy));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+.compare .row.win .bar i{background:linear-gradient(90deg,var(--sage),#3FA288)}
+.compare .note{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);margin-top:6px}
+
+.closing{margin-top:80px;background:var(--navy-2);color:#cbd5e3;border-radius:24px;padding:64px 48px;position:relative;overflow:hidden}
+.closing::before{content:"";position:absolute;inset:0;background-image:radial-gradient(circle, rgba(255,255,255,.06) 1px, transparent 1.4px);background-size:22px 22px;pointer-events:none}
+.closing .role-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#7FE3B5;border:1px solid rgba(127,227,181,.3);padding:6px 14px;border-radius:999px;margin-bottom:18px}
+.closing h3{color:#fff;margin:0 0 12px;font-size:clamp(32px,4vw,42px)}
+.closing h3 em{color:#7FE3B5}
+.closing p{color:#9FB1C8;font-size:17px;max-width:680px;margin:0 0 36px}
+.closing .roles{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;max-width:780px}
+@media(max-width:680px){.closing .roles{grid-template-columns:1fr}}
+.closing .role{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:18px 20px;transition:background .3s,border-color .3s,transform .3s}
+.closing .role:hover{background:rgba(127,227,181,.08);border-color:rgba(127,227,181,.3);transform:translateY(-2px)}
+.closing .role .t{color:#fff;font-weight:600;font-size:16px;margin-bottom:4px}
+.closing .role .d{font-size:13px;color:#9FB1C8}
+.closing .cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.cta{display:inline-flex;align-items:center;gap:8px;padding:13px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;transition:all .3s;letter-spacing:.01em}
+.cta.primary{background:#7FE3B5;color:var(--navy-2)}
+.cta.primary:hover{background:#fff;transform:translateY(-2px);box-shadow:0 12px 30px rgba(127,227,181,.3)}
+.cta.ghost{border:1px solid rgba(255,255,255,.18);color:#fff}
+.cta.ghost:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.3);transform:translateY(-2px)}
+.cta .arrow{display:inline-block;transition:transform .3s}
+.cta:hover .arrow{transform:translateX(4px)}
+
+.quote{text-align:center;margin:80px auto;max-width:780px}
+.quote .mark{font-family:'Playfair Display',serif;color:var(--sage);font-size:48px;line-height:0}
+.quote blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,2.6vw,28px);color:var(--navy);margin:0 0 20px;line-height:1.45}
+.quote cite{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-style:normal}
+
+.foot{text-align:center;padding:40px 32px 60px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-stagger > *{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal-stagger.in > *{opacity:1;transform:translateY(0)}
+.reveal-stagger.in > *:nth-child(1){transition-delay:.05s}
+.reveal-stagger.in > *:nth-child(2){transition-delay:.15s}
+.reveal-stagger.in > *:nth-child(3){transition-delay:.25s}
+.reveal-stagger.in > *:nth-child(4){transition-delay:.35s}
+.reveal-stagger.in > *:nth-child(5){transition-delay:.45s}
+.reveal-stagger.in > *:nth-child(6){transition-delay:.55s}
+
+@media(max-width:680px){
+  .flagship{padding:32px 24px}
+  .closing{padding:48px 28px}
+  .wrap{padding:0 22px}
+  .topbar{padding:10px 18px}
+  .topbar .right{gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="dots"></div>
+<div class="bg-blob b1"></div>
+<div class="bg-blob b2"></div>
+
+<header class="topbar">
+  <span><span class="pulse"></span><span data-i18n="topbar.label">PROFESSIONAL PORTFOLIO · ANDRÉS ECHEVERRY · 2026</span></span>
+  <div class="right">
+    <nav class="nav-links">
+      <a href="#flagship" data-i18n="nav.flagship">Flagship</a>
+      <a href="#braincol" data-i18n="nav.braincol">Braincol</a>
+      <a href="#projects" data-i18n="nav.projects">Projects</a>
+      <a href="#thinking" data-i18n="nav.thinking">Thinking</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang-switch" data-lang="en" id="langSwitch" role="group" aria-label="Language">
+      <button type="button" data-lang-btn="en" class="active" aria-label="English">EN</button>
+      <button type="button" data-lang-btn="es" aria-label="Español">ES</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="role-bar reveal">
+      <span class="dot"></span>
+      <span data-i18n="hero.tag">Senior Software Engineer · Technical Lead · LATAM</span>
+    </div>
+    <h1 class="reveal">Andrés Echeverry</h1>
+    <h2 class="reveal">
+      <span data-i18n="hero.sub1">Intelligent platforms that turn</span>
+      <span data-i18n="hero.sub2">complex operations into simple decisions</span>
+    </h2>
+    <p class="lede reveal" data-i18n="hero.lede">8+ years building scalable systems in production. 3+ years leading high-impact teams. From distributed systems to ML in production and AI agents, my work runs in enterprise operations across LATAM and the U.S.</p>
+
+    <div class="stats reveal-stagger">
+      <div class="stat"><span class="num"><span class="counter" data-to="8">0</span><span class="plus">+</span></span><div class="lab" data-i18n="hero.stat1">Years in production</div></div>
+      <div class="stat"><span class="num"><span class="counter" data-to="3">0</span><span class="plus">+</span></span><div class="lab" data-i18n="hero.stat2">Years leading teams</div></div>
+      <div class="stat"><span class="num"><span class="counter" data-to="20">0</span><span class="plus">+</span></span><div class="lab" data-i18n="hero.stat3">Enterprise projects</div></div>
+    </div>
+  </section>
+
+  <div class="divider reveal"><span class="line"></span><span class="mark">§</span><span class="line"></span></div>
+
+  <!-- FLAGSHIP / ROS -->
+  <section class="sect" id="flagship">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s1.mark">Section 1 · Flagship</span></div>
+    <h3 class="reveal"><span data-i18n="s1.title.pre">Braincol </span><em data-i18n="s1.title.em">ROS</em></h3>
+    <p class="blurb reveal" data-i18n="s1.blurb">Where everything I know as a software engineer converges: clean architecture, defense-in-depth multi-tenancy, real domain modeling, transactional outbox, AI agents integrated end-to-end. My technical flagship as a Software Engineer.</p>
+
+    <div class="flagship reveal">
+      <span class="badge" data-i18n="s1.badge">Flagship</span>
+      <h4 data-i18n="s1.h">ROS · Robust Operation System</h4>
+      <div class="sub" data-i18n="s1.sub">One coherent system replacing POS, CRM, WMS, finance, inventory and delivery</div>
+      <p data-i18n="s1.body">Replaces the tangle of disconnected systems real businesses are forced to use. Each company runs multiple branches with fully isolated data. An embedded AI agent layer understands the business context and acts on behalf of the operator. Starts in restaurants, extends to retail, pharmacies, distributors and warehouses across LATAM.</p>
+
+      <div class="pillgrid">
+        <div class="pill ai"><div class="l" data-i18n="s1.p0l">Replaces</div><div class="v" data-i18n="s1.p0v">POS · CRM · WMS · finance · inventory · delivery</div></div>
+        <div class="pill ai"><div class="l" data-i18n="s1.p4l">AI Agents</div><div class="v">LangGraph · Python · MCP · custom orchestration</div></div>
+        <div class="pill"><div class="l" data-i18n="s1.p1l">Backend</div><div class="v">NestJS 11 · Fastify · MikroORM 6</div></div>
+        <div class="pill"><div class="l" data-i18n="s1.p2l">Storage</div><div class="v">PostgreSQL · RLS · Supabase</div></div>
+        <div class="pill"><div class="l" data-i18n="s1.p3l">Mobile</div><div class="v">React Native · Expo · Tamagui</div></div>
+        <div class="pill"><div class="l" data-i18n="s1.p5l">Defense layers</div><div class="v" data-i18n="s1.p5v">ORM filter · RLS · explicit repo scoping</div></div>
+      </div>
+
+      <div class="stat-strip">
+        <div class="ss"><span class="ssn">23</span><span class="ssl" data-i18n="s1.sm1">production modules</span></div>
+        <div class="ss"><span class="ssn">71</span><span class="ssl" data-i18n="s1.sm2">domain entities</span></div>
+        <div class="ss"><span class="ssn">95</span><span class="ssl" data-i18n="s1.sm3">tests passing</span></div>
+        <div class="ss"><span class="ssn">74</span><span class="ssl" data-i18n="s1.sm4">typed error codes</span></div>
+        <div class="ss"><span class="ssn">9</span><span class="ssl" data-i18n="s1.sm5">versioned migrations</span></div>
+      </div>
+
+      <div class="eng-signals">
+        <div class="eng-sub" data-i18n="s1.engsub">Standards &amp; practices in production</div>
+        <h5 class="eng-title" data-i18n="s1.engh">Not just a stack. A way of building.</h5>
+        <div class="eng-grid">
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e1h">Transactional outbox</div>
+            <div class="eng-d" data-i18n="s1.e1d">Atomic event publication backed by a poller. Domain events never lost on a failed downstream, never double-published on retry.</div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e2h">Row-Level Security audit</div>
+            <div class="eng-d"><span data-i18n="s1.e2d.a">Postgres RLS enforced via tenant transaction interceptor. Pre-merge scripts </span><code>audit:rls-coverage</code><span data-i18n="s1.e2d.b"> and </span><code>audit:rls-bypass</code><span data-i18n="s1.e2d.c"> catch any drift before it lands.</span></div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e3h">OpenAPI as contract</div>
+            <div class="eng-d"><span data-i18n="s1.e3d.a">Spec generated from controllers, verified in CI via </span><code>openapi:check</code><span data-i18n="s1.e3d.b">. SDK and downstream frontends regenerate from a single source of truth.</span></div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e4h">Endpoint contract audit</div>
+            <div class="eng-d"><span data-i18n="s1.e4d.a">Custom static analyzer (</span><code>audit:endpoint-contracts</code><span data-i18n="s1.e4d.b">) ensures every endpoint follows the same response envelope, error shape and DTO conventions.</span></div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e5h">Domain events + capability registry</div>
+            <div class="eng-d" data-i18n="s1.e5d">Typed events emitted on every domain mutation. Modules subscribe through a capability registry, no hidden coupling, no spaghetti listeners.</div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e6h">Activity log on every mutation</div>
+            <div class="eng-d" data-i18n="s1.e6d">Global interceptor logs every POST/PATCH/PUT/DELETE with request-id on an independent EM context. Fire-and-forget, zero per-handler boilerplate.</div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e7h">Real-DB integration tests</div>
+            <div class="eng-d" data-i18n="s1.e7d">Tests boot the full Nest app with a real database, sequential workers, table truncation between cases. Mocks only at vendor boundaries.</div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e8h">k6 performance suite</div>
+            <div class="eng-d" data-i18n="s1.e8d">Load and stress scripts versioned with the codebase, run against a real database. Performance regressions caught before users feel them.</div>
+          </div>
+          <div class="eng-card">
+            <div class="eng-h" data-i18n="s1.e9h">Migration discipline</div>
+            <div class="eng-d" data-i18n="s1.e9d">Single clean baseline plus versioned incremental migrations. Every environment reproduces exactly. No silent schema drift.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAINCOL -->
+  <section class="sect" id="braincol">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s2.mark">Section 2 · Braincol</span></div>
+    <h3 class="reveal"><em data-i18n="s2.title.em">Platforms</em><span data-i18n="s2.title.post"> for scale and operations</span></h3>
+    <p class="blurb reveal" data-i18n="s2.blurb">I founded Braincol to build AI-agent platforms that solve real-world problems of scale and operations. Three pieces shipping today: a flagship operations platform (ROS), a fraud and anomaly detection platform for high-volume ops (Sentry), and an open standard with a reference vault so agents act without ever holding secrets (Never-Leak + Vault).</p>
+
+    <div class="products reveal-stagger">
+      <a class="prod linkable" href="https://neverleakprotocol.org/" target="_blank" rel="noopener noreferrer">
+        <span class="ext" aria-hidden="true">↗</span>
+        <span class="marker" data-i18n="s2.p1m">Open Standard</span>
+        <h6>Never-Leak Protocol <span class="public-tag" data-i18n="s2.p1tag" style="font-size:9px;letter-spacing:.22em;background:var(--sage-soft);color:var(--sage);padding:3px 8px;border-radius:999px">Public</span></h6>
+        <p><span data-i18n="s2.p1.a">Open standard for AI agent secret governance. The principle: </span><b data-i18n="s2.p1.b">agents request actions, not secrets</b><span data-i18n="s2.p1.c">. Credentials never enter the model context. Agents operate on opaque references the system resolves and executes.</span></p>
+        <span class="lic">Apache 2.0</span>
+      </a>
+      <a class="prod linkable" href="https://github.com/braincol/braincol-vault" target="_blank" rel="noopener noreferrer">
+        <span class="ext" aria-hidden="true">↗</span>
+        <span class="marker" data-i18n="s2.p2m">Reference Impl</span>
+        <h6>Braincol Vault <span class="public-tag" data-i18n="s2.p2tag" style="font-size:9px;letter-spacing:.22em;background:var(--sage-soft);color:var(--sage);padding:3px 8px;border-radius:999px">Public</span></h6>
+        <p><span data-i18n="s2.p2.a">First production-ready NL Protocol implementation. Agents </span><b data-i18n="s2.p2.b">use secrets without seeing them</b><span data-i18n="s2.p2.c">. X25519 + ChaCha20-Poly1305. </span><b data-i18n="s2.p2.d">2,445 tests passing</b><span data-i18n="s2.p2.e">.</span></p>
+        <span class="lic">AGPLv3</span>
+      </a>
+      <div class="prod">
+        <span class="marker" data-i18n="s2.p3m">Platform</span>
+        <h6>Braincol Sentry</h6>
+        <p><span data-i18n="s2.p3.a">Fraud and anomaly detection for </span><b data-i18n="s2.p3.b">high-volume operations</b><span data-i18n="s2.p3.c">. Catches suspicious transactions, atypical behaviors and operational disruptions before they become losses.</span></p>
+        <span class="lic">BSAL</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="sect" id="projects">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s3.mark">Section 3 · What I've built</span></div>
+    <h3 class="reveal"><span data-i18n="s3.title.pre">Selected </span><em data-i18n="s3.title.em">projects</em></h3>
+    <p class="blurb reveal" data-i18n="s3.blurb">A selection of projects in production over the last 8 years. Real-world impact metrics, no estimates.</p>
+
+    <div class="grid grid-2 reveal-stagger">
+      <article class="card">
+        <div class="ic">▲</div>
+        <h5 data-i18n="s3.c1.h">AI-First Field Operations Platform</h5>
+        <p><span data-i18n="s3.c1.a">Operations platform with logistics, inventory and workflow modules. On top, I designed the </span><b data-i18n="s3.c1.b">AI agent layer</b><span data-i18n="s3.c1.c"> that aggregates massive cross-source data to drive operational decisions. Also led production rollout of a bi-directional enterprise integration, modernizing 10 microservices.</span></p>
+        <div class="outcome"><span><b data-i18n="s3.c1.o1">−60%</b><span data-i18n="s3.c1.o2"> in SLA times · compliance lifted from </span><b data-i18n="s3.c1.o3">77% → 94%</b></span></div>
+        <div class="meta"><span class="tag-mono">LangGraph</span><span class="tag-mono">Python</span><span class="tag-mono">NestJS</span><span class="tag-mono">MCP</span></div>
+      </article>
+
+      <article class="card">
+        <div class="ic">⌬</div>
+        <h5 data-i18n="s3.c2.h">Distributed Tracing for Microservices</h5>
+        <p><span data-i18n="s3.c2.a">Hundreds of microservices, undebuggable. I built a tracing system using </span><b data-i18n="s3.c2.b">correlation ID + service + transaction ID</b><span data-i18n="s3.c2.c"> on a distributed search engine. A single query returns the full invocation tree.</span></p>
+        <div class="outcome"><span data-i18n="s3.c2.opre">From </span><b data-i18n="s3.c2.o1">~8 hours</b><span data-i18n="s3.c2.omid"> of debugging to </span><b data-i18n="s3.c2.o2">~1 minute</b></div>
+        <div class="meta"><span class="tag-mono">Elasticsearch</span><span class="tag-mono">OpenTelemetry</span><span class="tag-mono">Kibana</span></div>
+      </article>
+
+      <article class="card">
+        <div class="ic">◇</div>
+        <h5 data-i18n="s3.c3.h">ML in Production · Late-Order Detection</h5>
+        <p><b data-i18n="s3.c3.a">Isolation Forest</b><span data-i18n="s3.c3.b"> models with feature engineering on historical data, deployed to detect outliers in operational SLAs.</span></p>
+        <div class="outcome"><span><b data-i18n="s3.c3.o1">+20%</b><span data-i18n="s3.c3.o2"> of late orders caught early, directly improving SLA cure rates</span></span></div>
+        <div class="meta"><span class="tag-mono">scikit-learn</span><span class="tag-mono">Pandas</span><span class="tag-mono">Airflow</span></div>
+      </article>
+
+      <article class="card">
+        <div class="ic">⊛</div>
+        <h5 data-i18n="s3.c4.h">Auto-Discovery of Entities</h5>
+        <p><span data-i18n="s3.c4.a">System using </span><b data-i18n="s3.c4.b">Graph Neural Networks</b><span data-i18n="s3.c4.c">, embeddings and transformers that auto-classify unlabeled JSON data from heterogeneous sources. Zero human labeling.</span></p>
+        <div class="outcome"><span data-i18n="s3.c4.o">Zero-touch onboarding for new data sources</span></div>
+        <div class="meta"><span class="tag-mono">PyTorch Geometric</span><span class="tag-mono">Transformers</span><span class="tag-mono">Embeddings</span></div>
+      </article>
+
+      <article class="card">
+        <div class="ic">⬡</div>
+        <h5 data-i18n="s3.c5.h">Compass · Smart Furniture Layout</h5>
+        <p><span data-i18n="s3.c5.a">Algorithm for large U.S. construction firms. Ingested </span><b data-i18n="s3.c5.b">CAD files</b><span data-i18n="s3.c5.c">; the user labelled each space type, and the system produced </span><b data-i18n="s3.c5.d">multiple optimal furniture configurations</b><span data-i18n="s3.c5.e"> with a 3D viewer for client approval. Scales to buildings with hundreds of spaces without performance degradation, working directly with U.S. design teams.</span></p>
+        <div class="outcome"><span data-i18n="s3.c5.o">Genetic algorithms · stochastic search · decision trees · 3D</span></div>
+        <div class="meta"><span class="tag-mono">Genetic</span><span class="tag-mono">Stochastic</span><span class="tag-mono">3D Viewer</span></div>
+      </article>
+
+      <article class="card">
+        <div class="ic">◈</div>
+        <h5 data-i18n="s3.c6.h">Real-Time Operations Monitor</h5>
+        <p data-i18n="s3.c6.b">Centralized and standardized transactions for live support and monitoring. Radical reduction in operational response times.</p>
+        <div class="outcome"><span data-i18n="s3.c6.opre">Support response: </span><b data-i18n="s3.c6.o1">12h → 30min</b></div>
+        <div class="meta"><span class="tag-mono">MongoDB</span><span class="tag-mono">Node</span><span class="tag-mono">WebSockets</span><span class="tag-mono">Grafana</span></div>
+      </article>
+    </div>
+
+    <div class="compare reveal" style="margin-top:36px">
+      <h6 style="font-family:'Playfair Display',serif;font-weight:700;font-size:24px;margin:0 0 6px;color:var(--navy)" data-i18n="s3.cmp.h">Delivery speed · Comparison</h6>
+      <p style="font-size:14px;color:var(--ink-soft);margin:0 0 22px" data-i18n="s3.cmp.s">Same scope, same enterprise quality.</p>
+
+      <div class="row">
+        <div class="lbl"><span data-i18n="s3.cmp.r1l">Complex feature · average engineer</span><b class="val" data-i18n="s3.cmp.r1v">~4 months</b></div>
+        <div class="bar"><i data-fill="100"></i></div>
+      </div>
+      <div class="row win">
+        <div class="lbl"><span data-i18n="s3.cmp.r2l">Complex feature · Andrés Echeverry</span><b class="val" data-i18n="s3.cmp.r2v">~3 weeks</b></div>
+        <div class="bar"><i data-fill="19"></i></div>
+        <div class="note" data-i18n="s3.cmp.note">→ 5.3× faster · same enterprise quality</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- R&D -->
+  <section class="sect" id="rd">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s4.mark">Section 4 · Personal R&D</span></div>
+    <h3 class="reveal"><span data-i18n="s4.title.pre">My own </span><em data-i18n="s4.title.em">products</em></h3>
+    <p class="blurb reveal" data-i18n="s4.blurb">Tools I build in my own time. Most end up open-source or inside Braincol.</p>
+
+    <div class="grid grid-2 reveal-stagger">
+      <article class="card">
+        <div class="ic">◐</div>
+        <h5 data-i18n="s4.c1.h">MemFlow · Cognitive memory for agents</h5>
+        <p data-i18n="s4.c1.b">Persistent memory with human-like layers (sensory, short-term, long-term) so agents learn context, remember preferences and improve over time. Sub-millisecond recall, high-throughput core in Rust.</p>
+        <div class="meta"><span class="tag-mono">Rust</span><span class="tag-mono">Tokio</span><span class="tag-mono">Embeddings</span></div>
+      </article>
+      <article class="card">
+        <div class="ic">⚷</div>
+        <h5 data-i18n="s4.c2.h">Fraud and anomaly detection</h5>
+        <p data-i18n="s4.c2.b">Production-ready AI tooling focused on financial monitoring. Heuristics, classical ML and LLMs combined with judgment.</p>
+        <div class="meta"><span class="tag-mono">Python</span><span class="tag-mono">scikit-learn</span><span class="tag-mono">Stream Processing</span></div>
+      </article>
+      <a class="card linkable" href="https://neverleakprotocol.org/" target="_blank" rel="noopener noreferrer">
+        <span class="ext" aria-hidden="true">↗</span>
+        <div class="ic">⌖</div>
+        <h5 data-i18n="s4.c3.h">Anti-exfiltration protocol</h5>
+        <p data-i18n="s4.c3.b">Open standard against data exfiltration in AI agents. Materialized in Never-Leak Protocol and Braincol Vault.</p>
+        <div class="meta"><span class="tag-mono">Open Standard</span><span class="tag-mono">X25519</span><span class="tag-mono">ChaCha20</span></div>
+      </a>
+      <article class="card">
+        <div class="ic">◉</div>
+        <h5 data-i18n="s4.c4.h">ROS · Operations Platform</h5>
+        <p data-i18n="s4.c4.b">The flagship: production multi-tenant platform. Detailed above.</p>
+        <div class="meta"><span class="tag-mono">NestJS</span><span class="tag-mono">PostgreSQL</span><span class="tag-mono">React Native</span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ARCHITECTURAL THINKING -->
+  <section class="sect" id="thinking">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s5.mark">Section 5 · Architectural thinking</span></div>
+    <h3 class="reveal"><span data-i18n="s5.title.pre">Decisions that </span><em data-i18n="s5.title.em">define a system</em></h3>
+    <p class="blurb reveal" data-i18n="s5.blurb">These are the engineering rules I apply on every system I design and lead. Each one earned in production, with real teams, at real scale.</p>
+
+    <div class="arch reveal-stagger">
+      <div class="arch-card">
+        <div class="num">01</div>
+        <h6 data-i18n="s5.a1.h">Defense-in-depth multi-tenancy</h6>
+        <p><span data-i18n="s5.a1.a">Tenant isolation isn't a single guard. It's </span><b data-i18n="s5.a1.b">three independent layers</b><span data-i18n="s5.a1.c">: ORM filter, explicit repository scoping, and PostgreSQL RLS. If one is bypassed, the other two still hold.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">02</div>
+        <h6 data-i18n="s5.a2.h">Vendor-agnostic infrastructure</h6>
+        <p><span data-i18n="s5.a2.a">Auth, storage, realtime, payments, all behind </span><b data-i18n="s5.a2.b">DI tokens with typed interfaces</b><span data-i18n="s5.a2.c">. Switching a provider is a one-class change, not a rewrite. No vendor lock-in by default.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">03</div>
+        <h6 data-i18n="s5.a3.h">Typed error contracts</h6>
+        <p><span data-i18n="s5.a3.a">Domain errors as </span><b data-i18n="s5.a3.b">BusinessException + ErrorCode enum (30+ codes)</b><span data-i18n="s5.a3.c">. The frontend consumes structured errors, not strings. No magic numbers, no parsing prose.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">04</div>
+        <h6 data-i18n="s5.a4.h">Clean architecture boundaries</h6>
+        <p><span data-i18n="s5.a4.a">Controllers → Services → Repositories. The </span><b data-i18n="s5.a4.b">only layer touching the EntityManager is the repository</b><span data-i18n="s5.a4.c">. No shortcuts. Guards and interceptors delegate to services. Boundaries are enforced, not suggested.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">05</div>
+        <h6 data-i18n="s5.a5.h">Audit by default</h6>
+        <p><span data-i18n="s5.a5.a">A global </span><b data-i18n="s5.a5.b">activity-log interceptor</b><span data-i18n="s5.a5.c"> on every mutation, fire-and-forget, with an independent EM context. Zero per-handler boilerplate, full traceability across every request.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">06</div>
+        <h6 data-i18n="s5.a6.h">Migration discipline</h6>
+        <p><span data-i18n="s5.a6.a">A single </span><b data-i18n="s5.a6.b">clean baseline migration</b><span data-i18n="s5.a6.c"> is the source of truth. New schema = versioned migrations, no </span><code style="font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--cream-2);padding:2px 6px;border-radius:4px">schema:update --run</code><span data-i18n="s5.a6.d"> drift. Every prod environment can be reproduced exactly.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">07</div>
+        <h6 data-i18n="s5.a7.h">Domain-driven module boundaries</h6>
+        <p><span data-i18n="s5.a7.a">Modules export </span><b data-i18n="s5.a7.b">only services</b><span data-i18n="s5.a7.c">, never repositories or ORM features. Cross-module access is explicit, intentional, and reviewable. The dependency graph stays understandable.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">08</div>
+        <h6 data-i18n="s5.a8.h">Observability as a first-class concern</h6>
+        <p><span data-i18n="s5.a8.a">Request-id middleware on every route. Structured response envelope. </span><b data-i18n="s5.a8.b">Distributed tracing</b><span data-i18n="s5.a8.c"> (correlation + service + transaction ID) on a search engine. Debugging time collapses from hours to minutes.</span></p>
+      </div>
+      <div class="arch-card">
+        <div class="num">09</div>
+        <h6 data-i18n="s5.a9.h">Test what would actually fail</h6>
+        <p><span data-i18n="s5.a9.a">Integration tests boot the </span><b data-i18n="s5.a9.b">full Nest app with a real database</b><span data-i18n="s5.a9.c">, sequential workers, table truncation between tests. Mocks only at vendor boundaries (e.g. </span><code style="font-family:'JetBrains Mono',monospace;font-size:12px;background:var(--cream-2);padding:2px 6px;border-radius:4px">MockPaymentProvider</code><span data-i18n="s5.a9.d">) so what we test mirrors production.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPABILITIES -->
+  <section class="sect" id="capabilities">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s6.mark">Section 6 · Capabilities</span></div>
+    <h3 class="reveal"><span data-i18n="s6.title.pre">What I bring as a </span><em data-i18n="s6.title.em">Technical Lead</em></h3>
+    <p class="blurb reveal" data-i18n="s6.blurb">Every skill proven in production, under real pressure, with measurable outcomes. Not a theoretical CV. A demonstrated track record.</p>
+
+    <div class="cap reveal-stagger">
+      <div class="cap-card">
+        <div class="ic" style="color:var(--gold)">⚡</div>
+        <h6 data-i18n="s6.c1.h">Extreme delivery flow</h6>
+        <p data-i18n="s6.c1.b">A development system that compresses time radically. Complex features that take ~4 months for the average engineer, shipped in ~3 weeks at enterprise quality.</p>
+      </div>
+      <div class="cap-card">
+        <div class="ic" style="color:#C13838">●</div>
+        <h6 data-i18n="s6.c2.h">Exceptional problem-solving</h6>
+        <p data-i18n="s6.c2.b">I decompose complex problems into elegant solutions. Architectural thinking, advanced debugging, technical intuition honed on real enterprise systems.</p>
+      </div>
+      <div class="cap-card">
+        <div class="ic" style="color:var(--navy)">⇄</div>
+        <h6 data-i18n="s6.c3.h">Cutting-edge tech adoption</h6>
+        <p data-i18n="s6.c3.b">I evaluate, adopt and apply emerging technologies with judgment. From AI tooling to new frameworks, always chasing real competitive advantage, not empty trends.</p>
+      </div>
+      <div class="cap-card">
+        <div class="ic" style="color:var(--sage)">⊕</div>
+        <h6 data-i18n="s6.c4.h">Fluent professional English</h6>
+        <p data-i18n="s6.c4.b">Frictionless technical and business communication. Capable of leading meetings, documenting and negotiating with international stakeholders.</p>
+      </div>
+      <div class="cap-card">
+        <div class="ic" style="color:var(--sage)">⌂</div>
+        <h6 data-i18n="s6.c5.h">Enterprise-grade architecture</h6>
+        <p data-i18n="s6.c5.b">CI/CD, design patterns, modularization, clean code, testing strategies. I build invisible foundations that let teams scale without breaking.</p>
+      </div>
+      <div class="cap-card">
+        <div class="ic" style="color:#C13838">◎</div>
+        <h6 data-i18n="s6.c6.h">Business and product vision</h6>
+        <p data-i18n="s6.c6.b">I understand the customer, not just the code. I translate complex needs into real-value features. Every technical decision aligned with impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="sect" id="education">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s7.mark">Section 7 · Education</span></div>
+    <h3 class="reveal"><em data-i18n="s7.title.em">Continuous</em><span data-i18n="s7.title.post"> education</span></h3>
+    <p class="blurb reveal" data-i18n="s7.blurb">Combining field practice with rigorous training in applied AI and data science.</p>
+
+    <div class="edu reveal-stagger">
+      <div class="edu-item">
+        <div>
+          <h6 data-i18n="s7.e1.h">M.Sc. Applied Artificial Intelligence</h6>
+          <div class="inst" data-i18n="s7.e1.i">Universidad de los Andes</div>
+        </div>
+        <div class="when" data-i18n="s7.e1.w">In progress</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <h6 data-i18n="s7.e2.h">Data Science · Professional Certificate</h6>
+          <div class="inst" data-i18n="s7.e2.i">MIT Professional Education</div>
+        </div>
+        <div class="when" data-i18n="s7.e2.w">Completed</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <h6 data-i18n="s7.e3.h">B.Sc. Systems Engineering</h6>
+          <div class="inst" data-i18n="s7.e3.i">Universidad del Norte · merit scholarship</div>
+        </div>
+        <div class="when" data-i18n="s7.e3.w">Bachelor's</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STACK -->
+  <section class="sect" id="stack">
+    <div class="sect-mark reveal"><span class="dot"></span><span data-i18n="s8.mark">Section 8 · Tech stack</span></div>
+    <h3 class="reveal"><span data-i18n="s8.title.pre">Tools I </span><em data-i18n="s8.title.em">use daily</em></h3>
+    <p class="blurb reveal" data-i18n="s8.blurb">A pragmatic stack. I pick the right tool for the problem, not the trend of the moment.</p>
+
+    <div class="stack-block reveal">
+      <div class="lab" data-i18n="s8.l1">Languages and frameworks</div>
+      <div class="stack-pills">
+        <span class="sp">TypeScript</span><span class="sp">Python</span><span class="sp">Rust</span>
+        <span class="sp">NestJS</span><span class="sp">FastAPI</span><span class="sp">Next.js</span>
+        <span class="sp">React</span><span class="sp">React Native</span><span class="sp">Node</span>
+      </div>
+    </div>
+    <div class="stack-block reveal">
+      <div class="lab" data-i18n="s8.l2">AI · ML · Security</div>
+      <div class="stack-pills">
+        <span class="sp">LangGraph</span><span class="sp">LangChain</span><span class="sp">MCP Protocol</span>
+        <span class="sp">PyTorch</span><span class="sp">PyTorch Geometric</span><span class="sp">scikit-learn</span>
+        <span class="sp">X25519</span><span class="sp">ChaCha20-Poly1305</span><span class="sp">OWASP</span>
+      </div>
+    </div>
+    <div class="stack-block reveal">
+      <div class="lab" data-i18n="s8.l3">Infrastructure and data</div>
+      <div class="stack-pills">
+        <span class="sp">AWS</span><span class="sp">Docker</span><span class="sp">Kubernetes</span>
+        <span class="sp">Terraform</span><span class="sp">PostgreSQL</span><span class="sp">MongoDB</span>
+        <span class="sp">Redis</span><span class="sp">Elasticsearch</span><span class="sp">Kafka</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="closing reveal" id="contact">
+    <span class="role-tag" data-i18n="cl.tag">Available · Remote · Global</span>
+    <h3><span data-i18n="cl.h.pre">Open to roles building </span><em data-i18n="cl.h.em">ambitious products</em></h3>
+    <p data-i18n="cl.p">Technical leadership is about building excellent systems and growing people. I foster transparency, mentorship and a culture where teams ship software with ownership and pride.</p>
+
+    <div class="roles">
+      <div class="role"><div class="t">Engineering Manager</div><div class="d" data-i18n="cl.r1">Teams of 5–25 engineers, scaling and culture</div></div>
+      <div class="role"><div class="t">Technical Lead</div><div class="d" data-i18n="cl.r2">Architecture, hands-on mentorship, technical direction</div></div>
+      <div class="role"><div class="t">Staff Engineer</div><div class="d" data-i18n="cl.r3">Critical systems, cross-team decisions</div></div>
+      <div class="role"><div class="t">Senior Software Engineer</div><div class="d" data-i18n="cl.r4">Senior IC focused on complex systems and AI</div></div>
+    </div>
+
+    <div class="cta-row">
+      <a class="cta primary" href="https://www.linkedin.com/in/aeecheverry" target="_blank" rel="noopener noreferrer"><span data-i18n="cl.cta1">Connect on LinkedIn</span><span class="arrow">→</span></a>
+      <a class="cta ghost" href="https://github.com/aeecheverry" target="_blank" rel="noopener noreferrer">GitHub @aeecheverry <span class="arrow">↗</span></a>
+      <a class="cta ghost" href="https://neverleakprotocol.org/" target="_blank" rel="noopener noreferrer"><span data-i18n="cl.cta3">Never-Leak Protocol</span> <span class="arrow">↗</span></a>
+    </div>
+  </section>
+
+  <div class="quote reveal">
+    <div class="mark">"</div>
+    <blockquote data-i18n="q.text">I build systems that don't break, lead teams that ship, and make every technical decision serve real impact.</blockquote>
+    <cite data-i18n="q.cite">Senior Software Engineer · Technical Lead</cite>
+  </div>
+
+</main>
+
+<footer class="foot" data-i18n="foot">© 2026 · Made in Colombia · Built to scale</footer>
+
+<script>
+const I18N = {
+  en: {},
+  es: {
+    'topbar.label':'PORTAFOLIO PROFESIONAL · ANDRÉS ECHEVERRY · 2026',
+    'nav.flagship':'Insignia','nav.braincol':'Braincol','nav.projects':'Proyectos','nav.thinking':'Arquitectura','nav.contact':'Contacto',
+
+    'hero.tag':'Senior Software Engineer · Technical Lead · LATAM',
+    'hero.sub1':'Plataformas inteligentes que convierten',
+    'hero.sub2':'operaciones complejas en decisiones simples',
+    'hero.lede':'+8 años construyendo sistemas escalables en producción. +3 años liderando equipos de alto impacto. De sistemas distribuidos a ML en producción y agentes de IA, mi trabajo corre en operaciones enterprise entre LATAM y EE.UU.',
+    'hero.stat1':'Años en producción','hero.stat2':'Años liderando equipos','hero.stat3':'Proyectos enterprise',
+
+    's1.mark':'Sección 1 · Insignia',
+    's1.title.pre':'Braincol ',
+    's1.title.em':'ROS',
+    's1.blurb':'Donde converge todo lo que sé como ingeniero de software: arquitectura limpia, multi-tenancy de defensa en profundidad, modelado real de dominio, outbox transaccional, agentes de IA integrados end-to-end. Mi insignia técnica como Ingeniero de Software.',
+    's1.badge':'Insignia',
+    's1.h':'ROS · Robust Operation System',
+    's1.sub':'Un único sistema coherente que reemplaza POS, CRM, WMS, finanzas, inventario y delivery',
+    's1.body':'Reemplaza la maraña de sistemas desconectados que los negocios reales se ven obligados a usar. Cada empresa maneja múltiples sedes con datos completamente aislados. Una capa de agentes de IA embebida entiende el contexto del negocio y actúa en nombre del operador. Arranca en restaurantes, se extiende a retail, farmacias, distribuidores y bodegas en LATAM.',
+    's1.p0l':'Reemplaza','s1.p0v':'POS · CRM · WMS · finanzas · inventario · delivery',
+    's1.p1l':'Backend','s1.p2l':'Almacenamiento','s1.p3l':'Mobile','s1.p4l':'Agentes de IA',
+    's1.p5l':'Capas de defensa','s1.p5v':'ORM filter · RLS · scoping explícito',
+    's1.sm1':'módulos en producción','s1.sm2':'entidades de dominio','s1.sm3':'tests pasando','s1.sm4':'códigos de error tipados','s1.sm5':'migraciones versionadas',
+    's1.engsub':'Estándares y prácticas en producción',
+    's1.engh':'No es solo un stack. Es una forma de construir.',
+    's1.e1h':'Outbox transaccional',
+    's1.e1d':'Publicación de eventos atómica respaldada por un poller. Los eventos de dominio nunca se pierden ante fallos downstream, nunca se duplican en reintentos.',
+    's1.e2h':'Auditoría de Row-Level Security',
+    's1.e2d.a':'RLS de Postgres impuesto vía interceptor transaccional de tenant. Scripts pre-merge ',
+    's1.e2d.b':' y ',
+    's1.e2d.c':' detectan cualquier drift antes de que llegue a main.',
+    's1.e3h':'OpenAPI como contrato',
+    's1.e3d.a':'Spec generado desde los controllers, verificado en CI con ',
+    's1.e3d.b':'. SDK y frontends downstream se regeneran desde una sola fuente de verdad.',
+    's1.e4h':'Auditoría de contratos de endpoint',
+    's1.e4d.a':'Analizador estático propio (',
+    's1.e4d.b':') que asegura que cada endpoint sigue el mismo envelope de respuesta, forma de error y convenciones de DTOs.',
+    's1.e5h':'Domain events + capability registry',
+    's1.e5d':'Eventos tipados emitidos en cada mutación de dominio. Los módulos se suscriben vía un capability registry: cero acoplamiento oculto, cero listeners spaghetti.',
+    's1.e6h':'Activity log en cada mutación',
+    's1.e6d':'Interceptor global que registra todo POST/PATCH/PUT/DELETE con request-id, sobre un contexto de EM independiente. Fire-and-forget, cero boilerplate por handler.',
+    's1.e7h':'Tests de integración con DB real',
+    's1.e7d':'Los tests bootean la app Nest completa con DB real, workers secuenciales, truncate de tablas entre casos. Mocks solo en fronteras de proveedor.',
+    's1.e8h':'Suite de performance k6',
+    's1.e8d':'Scripts de load y stress versionados con el código, ejecutados sobre DB real. Las regresiones de performance se cazan antes de que los usuarios las sientan.',
+    's1.e9h':'Disciplina de migraciones',
+    's1.e9d':'Una baseline limpia más migraciones incrementales versionadas. Cada entorno se reproduce exacto. Cero drift silencioso de schema.',
+
+    's2.mark':'Sección 2 · Braincol',
+    's2.title.em':'Plataformas','s2.title.post':' para escala y operaciones',
+    's2.blurb':'Fundé Braincol para construir plataformas con agentes de IA que resuelven problemas reales de escala y operación. Tres piezas en producción hoy: una plataforma insignia de operaciones (ROS), una plataforma de detección de fraude y anomalías para alto volumen (Sentry), y un estándar abierto con vault de referencia para que los agentes actúen sin nunca tener secretos (Never-Leak + Vault).',
+    's2.p2tag':'Público',
+    's2.p1m':'Estándar Abierto','s2.p1tag':'Público',
+    's2.p1.a':'Estándar abierto para gobernanza de secretos en agentes de IA. El principio: ',
+    's2.p1.b':'los agentes piden acciones, no secretos',
+    's2.p1.c':'. Las credenciales nunca entran al contexto del modelo. Los agentes operan con referencias opacas que el sistema resuelve y ejecuta.',
+    's2.p2m':'Implementación de referencia',
+    's2.p2.a':'Primera implementación productiva del NL Protocol. Los agentes ',
+    's2.p2.b':'usan secretos sin verlos',
+    's2.p2.c':'. X25519 + ChaCha20-Poly1305. ',
+    's2.p2.d':'2,445 tests pasando',
+    's2.p2.e':'.',
+    's2.p3m':'Plataforma',
+    's2.p3.a':'Detección de fraude y anomalías para ',
+    's2.p3.b':'operaciones de alto volumen',
+    's2.p3.c':'. Identifica transacciones sospechosas, comportamientos atípicos y disrupciones operativas antes de que se conviertan en pérdidas.',
+
+    's3.mark':'Sección 3 · Lo que he construido',
+    's3.title.pre':'Proyectos ',
+    's3.title.em':'destacados',
+    's3.blurb':'Selección de proyectos en producción durante los últimos 8 años. Métricas de impacto real, sin estimaciones.',
+
+    's3.c1.h':'Plataforma de Operaciones de Campo · IA',
+    's3.c1.a':'Plataforma de operaciones con módulos de logística, inventario y flujos. Sobre esa base, diseñé la ',
+    's3.c1.b':'capa de agentes de IA',
+    's3.c1.c':' que agrega información masiva multi-fuente para tomar decisiones operativas. Adicionalmente, lideré el rollout en producción de una integración enterprise bidireccional, modernizando 10 microservicios.',
+    's3.c1.o1':'−60%','s3.c1.o2':' en tiempos de SLA · cumplimiento subió de ','s3.c1.o3':'77% → 94%',
+
+    's3.c2.h':'Trazabilidad Distribuida para Microservicios',
+    's3.c2.a':'Cientos de microservicios, imposibles de depurar. Implementé un sistema de tracing con ',
+    's3.c2.b':'correlation ID + servicio + transaction ID',
+    's3.c2.c':' sobre un motor de búsqueda distribuido. Una sola búsqueda devuelve el árbol completo de invocaciones.',
+    's3.c2.opre':'De ','s3.c2.o1':'~8 horas','s3.c2.omid':' de depuración a ','s3.c2.o2':'~1 minuto',
+
+    's3.c3.h':'ML en Producción · Detección de Retrasos',
+    's3.c3.a':'Isolation Forest',
+    's3.c3.b':' con feature engineering sobre datos históricos para detectar outliers en SLAs operativos.',
+    's3.c3.o1':'+20%','s3.c3.o2':' de órdenes con retraso detectadas a tiempo · mejora directa en SLAs',
+
+    's3.c4.h':'Autodescubrimiento de Entidades',
+    's3.c4.a':'Sistema con ',
+    's3.c4.b':'Graph Neural Networks',
+    's3.c4.c':', embeddings y transformers que clasifican automáticamente datos JSON sin etiquetar de fuentes heterogéneas. Cero etiquetado humano.',
+    's3.c4.o':'Onboarding zero-touch para nuevas fuentes',
+
+    's3.c5.h':'Compass · Distribución Inteligente',
+    's3.c5.a':'Algoritmo para grandes constructoras en EE.UU. Recibía ',
+    's3.c5.b':'archivos CAD',
+    's3.c5.c':', el usuario indicaba el tipo de cada espacio, y el sistema generaba ',
+    's3.c5.d':'múltiples configuraciones óptimas',
+    's3.c5.e':' con visualización 3D para aprobación del cliente. Escala a edificios con cientos de espacios sin degradación de performance, trabajando directamente con equipos de diseño en EE.UU.',
+    's3.c5.o':'Algoritmos genéticos · estocásticos · árboles de decisión · 3D',
+
+    's3.c6.h':'Monitor de Operaciones en Tiempo Real',
+    's3.c6.b':'Centralización y estandarización de transacciones para soporte y monitoreo en vivo. Reducción radical en tiempos de respuesta operativa.',
+    's3.c6.opre':'Soporte: ','s3.c6.o1':'12h → 30min',
+
+    's3.cmp.h':'Velocidad de entrega · Comparativa',
+    's3.cmp.s':'Mismo alcance, misma calidad enterprise.',
+    's3.cmp.r1l':'Funcionalidad compleja · ingeniero promedio',
+    's3.cmp.r1v':'~4 meses',
+    's3.cmp.r2l':'Funcionalidad compleja · Andrés Echeverry',
+    's3.cmp.r2v':'~3 semanas',
+    's3.cmp.note':'→ 5.3× más rápido · misma calidad enterprise',
+
+    's4.mark':'Sección 4 · R&D personal',
+    's4.title.pre':'Productos ','s4.title.em':'propios',
+    's4.blurb':'Construyo herramientas en mi tiempo. La mayoría termina en open-source o en Braincol.',
+    's4.c1.h':'MemFlow · Memoria cognitiva para agentes',
+    's4.c1.b':'Memoria persistente con capas similares a la humana (sensorial, corto plazo, largo plazo) para que los agentes aprendan del contexto, recuerden preferencias y mejoren con el tiempo. Recall sub-milisegundo, núcleo de alto throughput en Rust.',
+    's4.c2.h':'Detección de fraudes y anomalías',
+    's4.c2.b':'Herramientas de IA listas para producción enfocadas en monitoreo financiero. Heurísticas, ML clásico y LLMs combinados con criterio.',
+    's4.c3.h':'Protocolo anti-exfiltración',
+    's4.c3.b':'Estándar abierto contra exfiltración de datos en agentes de IA. Materializado en Never-Leak Protocol y Braincol Vault.',
+    's4.c4.h':'ROS · Plataforma de Operaciones',
+    's4.c4.b':'La insignia: plataforma multi-tenant productiva. Detallada arriba.',
+
+    's5.mark':'Sección 5 · Pensamiento arquitectónico',
+    's5.title.pre':'Decisiones que ',
+    's5.title.em':'definen un sistema',
+    's5.blurb':'Estas son las reglas que aplico en cada sistema que diseño y lidero. Cada una ganada en producción, con equipos reales, a escala real.',
+    's5.a1.h':'Multi-tenancy de defensa en profundidad',
+    's5.a1.a':'El aislamiento de tenants no es un solo guard. Son ',
+    's5.a1.b':'tres capas independientes',
+    's5.a1.c':': filtro del ORM, scoping explícito en el repositorio, y RLS de PostgreSQL. Si una se rompe, las otras dos siguen sosteniendo.',
+    's5.a2.h':'Infraestructura vendor-agnostic',
+    's5.a2.a':'Auth, storage, realtime, payments, todo detrás de ',
+    's5.a2.b':'tokens de DI con interfaces tipadas',
+    's5.a2.c':'. Cambiar un proveedor es un cambio de una clase, no un rewrite. Sin vendor lock-in por defecto.',
+    's5.a3.h':'Contratos de error tipados',
+    's5.a3.a':'Errores de dominio como ',
+    's5.a3.b':'BusinessException + ErrorCode enum (30+ códigos)',
+    's5.a3.c':'. El frontend consume errores estructurados, no strings. Sin números mágicos, sin parsear texto.',
+    's5.a4.h':'Fronteras de arquitectura limpia',
+    's5.a4.a':'Controllers → Services → Repositories. La ',
+    's5.a4.b':'única capa que toca el EntityManager es el repositorio',
+    's5.a4.c':'. Sin atajos. Guards e interceptors delegan a servicios. Las fronteras se imponen, no se sugieren.',
+    's5.a5.h':'Auditoría por defecto',
+    's5.a5.a':'Un ',
+    's5.a5.b':'interceptor global de activity log',
+    's5.a5.c':' en cada mutación, fire-and-forget, con un contexto de EM independiente. Cero boilerplate por handler, trazabilidad total.',
+    's5.a6.h':'Disciplina de migraciones',
+    's5.a6.a':'Una sola ',
+    's5.a6.b':'baseline migration limpia',
+    's5.a6.c':' como fuente de verdad. Cambios nuevos = migraciones versionadas, sin drift de ',
+    's5.a6.d':'. Cada entorno productivo se reproduce exacto.',
+    's5.a7.h':'Fronteras de módulo orientadas al dominio',
+    's5.a7.a':'Los módulos exportan ',
+    's5.a7.b':'solo servicios',
+    's5.a7.c':', nunca repositorios ni features del ORM. El acceso entre módulos es explícito, intencional y revisable. El grafo de dependencias se mantiene legible.',
+    's5.a8.h':'Observabilidad como ciudadano de primera',
+    's5.a8.a':'Request-id middleware en cada ruta. Envelope estructurado de respuesta. ',
+    's5.a8.b':'Tracing distribuido',
+    's5.a8.c':' (correlation + servicio + transaction ID) sobre un motor de búsqueda. La depuración pasa de horas a minutos.',
+    's5.a9.h':'Probar lo que realmente puede fallar',
+    's5.a9.a':'Tests de integración bootean la ',
+    's5.a9.b':'app Nest completa con DB real',
+    's5.a9.c':', workers secuenciales, truncate de tablas entre tests. Mocks solo en fronteras de proveedor (ej. ',
+    's5.a9.d':') para que lo que probamos sea espejo de producción.',
+
+    's6.mark':'Sección 6 · Capacidades',
+    's6.title.pre':'Lo que aporto como ',
+    's6.title.em':'Lead Technical',
+    's6.blurb':'Cada habilidad probada en producción, bajo presión real, con resultados medibles. No es un CV teórico. Es un historial demostrado.',
+    's6.c1.h':'Flujo de entrega extremo',
+    's6.c1.b':'Sistema propio de desarrollo que comprime tiempos radicalmente. Funcionalidades complejas de ~4 meses entregadas en ~3 semanas, calidad enterprise.',
+    's6.c2.h':'Resolución de problemas excepcional',
+    's6.c2.b':'Descompongo problemas complejos en soluciones elegantes. Pensamiento arquitectónico, debugging avanzado, intuición técnica afinada con sistemas reales.',
+    's6.c3.h':'Adopción tecnológica de vanguardia',
+    's6.c3.b':'Evalúo, adopto y aplico tecnologías emergentes con criterio. Desde herramientas de IA hasta nuevos frameworks, siempre buscando ventaja competitiva real.',
+    's6.c4.h':'Inglés profesional fluido',
+    's6.c4.b':'Comunicación técnica y de negocio sin fricción. Capacidad de liderar reuniones, documentar y negociar con stakeholders internacionales.',
+    's6.c5.h':'Arquitectura de nivel empresarial',
+    's6.c5.b':'CI/CD, patrones de diseño, modularización, código limpio, estrategias de testing. Construyo cimientos invisibles que permiten escalar sin quebrarse.',
+    's6.c6.h':'Visión de negocio y producto',
+    's6.c6.b':'Entiendo al cliente, no solo el código. Traduzco necesidades complejas en funcionalidades de valor real. Cada decisión técnica alineada al impacto.',
+
+    's7.mark':'Sección 7 · Educación',
+    's7.title.em':'Formación','s7.title.post':' continua',
+    's7.blurb':'Combino la práctica de campo con formación rigurosa en IA aplicada y data science.',
+    's7.e1.h':'M.Sc. Inteligencia Artificial Aplicada','s7.e1.i':'Universidad de los Andes','s7.e1.w':'En curso',
+    's7.e2.h':'Data Science · Certificado Profesional','s7.e2.i':'MIT Professional Education','s7.e2.w':'Completado',
+    's7.e3.h':'Ingeniería de Sistemas','s7.e3.i':'Universidad del Norte · beca por mérito','s7.e3.w':'Pregrado',
+
+    's8.mark':'Sección 8 · Stack técnico',
+    's8.title.pre':'Herramientas que ',
+    's8.title.em':'uso a diario',
+    's8.blurb':'Stack pragmático. Escojo la herramienta correcta para el problema, no la favorita del momento.',
+    's8.l1':'Lenguajes y frameworks',
+    's8.l2':'AI · ML · Seguridad',
+    's8.l3':'Infraestructura y datos',
+
+    'cl.tag':'Disponible · Remoto · Global',
+    'cl.h.pre':'Abierto a roles construyendo ',
+    'cl.h.em':'productos ambiciosos',
+    'cl.p':'El liderazgo técnico se trata de construir sistemas excelentes y hacer crecer personas. Fomento transparencia, mentoría y una cultura donde los equipos entregan software con ownership y orgullo.',
+    'cl.r1':'Equipos de 5–25 ingenieros, escalado y cultura',
+    'cl.r2':'Arquitectura, mentoría hands-on, dirección técnica',
+    'cl.r3':'Sistemas críticos, decisiones cross-team',
+    'cl.r4':'IC senior con foco en sistemas complejos e IA',
+    'cl.cta1':'Conectar en LinkedIn',
+    'cl.cta3':'Never-Leak Protocol',
+
+    'q.text':'Construyo sistemas que no se rompen, lidero equipos que entregan, y hago de cada decisión técnica una alineada con impacto real.',
+    'q.cite':'Senior Software Engineer · Technical Lead',
+
+    'foot':'© 2026 · Hecho en Colombia · Construido para escalar',
+  }
+};
+
+// Snapshot every translatable element's English text on load (textContent only — no HTML parsing)
+const I18N_NODES = [];
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+  I18N_NODES.push({el, key:el.getAttribute('data-i18n'), en: el.textContent});
+});
+
+function applyLang(lang){
+  document.documentElement.lang = lang;
+  I18N_NODES.forEach(({el,key,en})=>{
+    const v = lang==='en' ? en : (I18N.es[key] ?? en);
+    el.textContent = v;
+  });
+  const sw = document.getElementById('langSwitch');
+  sw.dataset.lang = lang;
+  sw.querySelectorAll('button').forEach(b=>{
+    b.classList.toggle('active', b.dataset.langBtn===lang);
+  });
+  try{localStorage.setItem('portfolio-lang', lang)}catch(e){}
+}
+
+const savedLang = (()=>{try{return localStorage.getItem('portfolio-lang')}catch(e){return null}})();
+applyLang(savedLang==='es' ? 'es' : 'en');
+
+document.querySelectorAll('[data-lang-btn]').forEach(b=>{
+  b.addEventListener('click', ()=> applyLang(b.dataset.langBtn));
+});
+
+// Reveal-on-scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.counter').forEach(el=>{
+        const to = +el.dataset.to;
+        const dur = 1400; const start = performance.now();
+        function tick(t){
+          const p = Math.min(1,(t-start)/dur);
+          const eased = 1-Math.pow(1-p,3);
+          el.textContent = Math.round(to*eased);
+          if(p<1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      });
+      e.target.querySelectorAll('[data-fill]').forEach(b=>{
+        b.style.width = b.dataset.fill+'%';
+      });
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:.12, rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal,.reveal-stagger,.compare').forEach(el=>io.observe(el));
+
+document.querySelectorAll('.nav-links a').forEach(a=>{
+  a.addEventListener('click',(e)=>{
+    const id = a.getAttribute('href');
+    if(id.startsWith('#')){
+      const t = document.querySelector(id);
+      if(t){e.preventDefault(); t.scrollIntoView({behavior:'smooth',block:'start'})}
+    }
+  });
+});
+</script>
+</body>
+</html>
