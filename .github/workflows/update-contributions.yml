@@ -1,0 +1,71 @@
+name: Update contribution calendar
+
+on:
+  schedule:
+    # 07:00 in Colombia (UTC-5).
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-contributions.yml'
+      - 'scripts/update_contributions.py'
+      - 'scripts/test_update_contributions.py'
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: contribution-calendar
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out the latest published source
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      - name: Verify the calendar parser
+        run: python3 -m unittest discover -s scripts -p 'test_*.py'
+
+      - name: Fetch anonymous public contribution counts
+        run: python3 scripts/update_contributions.py
+
+      - name: Save the refreshed calendar
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add contributions.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh public contribution calendar'
+            git push origin HEAD:main
+          fi
+
+      # GITHUB_TOKEN pushes do not trigger another Pages build automatically.
+      - name: Publish the refreshed calendar to GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pages/builds"
+          expected_commit=$(git rev-parse HEAD)
+          for attempt in $(seq 1 36); do
+            build=$(gh api "repos/$GITHUB_REPOSITORY/pages/builds/latest")
+            status=$(jq -r '.status' <<< "$build")
+            commit=$(jq -r '.commit' <<< "$build")
+            if [[ "$commit" == "$expected_commit" && "$status" == 'built' ]]; then
+              echo 'Refreshed calendar is published.'
+              exit 0
+            fi
+            if [[ "$commit" == "$expected_commit" && "$status" == 'errored' ]]; then
+              jq '.error' <<< "$build"
+              exit 1
+            fi
+            sleep 5
+          done
+          echo 'Pages did not finish publishing the refreshed calendar in time.' >&2
+          exit 1
