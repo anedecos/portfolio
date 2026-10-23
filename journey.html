@@ -5,26 +5,24 @@ header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1p
 .eyebrow{font:11px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}h1{font:500 clamp(44px,5.4vw,72px)/1.05 var(--serif);letter-spacing:-.05em;margin:22px 0}h1 em{color:var(--sage);font-weight:500}h2{font:500 clamp(32px,3.6vw,44px)/1.1 var(--serif);letter-spacing:-.035em;margin:10px 0 6px}h3{font:600 11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin:0 0 10px}p{margin:0 0 18px}
 .intro{padding:72px 0 40px}.lede{font-size:18px;line-height:1.7;color:var(--soft);max-width:620px}
 .thread{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin-top:40px}.thread a{display:block;padding:22px 20px 22px 0;margin-right:20px;border-right:1px solid var(--line);text-decoration:none}.thread a:last-child{border:0;margin:0}.thread strong{display:block;font:500 26px/1.2 var(--serif);margin:6px 0 2px}.thread span{font-size:12px;color:var(--soft)}.thread a:hover strong{color:var(--sage)}.thread .arrow{color:var(--sage);font-family:var(--mono)}
-.timeline{padding:30px 0 70px}.stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:44px;padding:56px 0 56px 44px;border-left:1px solid var(--line)}.stage:before{content:'';position:absolute;left:-8px;top:66px;width:15px;height:15px;border-radius:50%;background:var(--cream);border:3px solid var(--sage)}.stage.current:before{background:var(--sage)}
+.timeline{padding:30px 0 70px}.stage{position:relative;display:grid;padding:56px 0 56px 44px;border-left:1px solid var(--line)}.stage:before{content:'';position:absolute;left:-8px;top:66px;width:15px;height:15px;border-radius:50%;background:var(--cream);border:3px solid var(--sage)}.stage.current:before{background:var(--sage)}
 .stage-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:4px}.verb{font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--navy);color:#fff;padding:5px 9px;border-radius:3px}.company{font-size:15px;font-weight:600}.role{font-size:13px;color:var(--soft)}.stage .summary{font-size:16px;color:var(--soft);max-width:640px;margin-top:14px}
 .groups{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}.group{border:1px solid var(--line);background:#fffdf9;border-radius:6px;padding:20px 22px}.group.wide{grid-column:1/-1}.group ul{margin:0;padding:0;list-style:none}.group li{font-size:14px;line-height:1.55;padding:5px 0 5px 18px;position:relative}.group li:before{content:'›';position:absolute;left:0;color:var(--sage);font-weight:700}.group li b{font-weight:600}
 .stack{display:grid;grid-template-columns:150px 1fr;gap:10px 18px;align-items:baseline}.stack dt{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}.stack dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}.chip{font:11px var(--mono);background:var(--pale);color:var(--deep);border-radius:3px;padding:4px 8px}
 .projects{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.project{background:var(--navy);color:#fff;border-radius:6px;padding:22px;display:flex;flex-direction:column}.project .num{font:11px var(--mono);color:var(--mint)}.project strong{font:500 21px/1.25 var(--serif);margin:6px 0 8px;display:block}.project p{font-size:13px;color:#d0dae5;margin:0}.project .metric{margin-top:auto;padding-top:14px;border-top:1px solid #50617a;font:500 15px var(--serif);color:var(--mint)}.project .metric:empty{display:none}.project p+.metric{margin-top:16px}
-.notes{display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:110px}.note{border-radius:6px;padding:20px 22px}.note.remember{background:var(--pale);border:1px solid #c5d6cb}.note.asked{background:#fffdf9;border:1px solid var(--line)}.mnemonic{font:500 22px/1.3 var(--serif);margin:0 0 12px}.note ul{margin:0;padding:0;list-style:none}.note li{font-size:13px;line-height:1.5;padding:4px 0;color:var(--soft)}.note li b{color:var(--navy);font-weight:600}.qa{border-top:1px solid var(--line);padding:12px 0}.qa:first-of-type{border-top:0;padding-top:0}.qa:last-child{padding-bottom:0}.qa .q{font-size:13px;font-weight:600;margin:0 0 4px}.qa .a{font-size:13px;color:var(--soft);margin:0;line-height:1.55}
-.pending{border:1px dashed #b9c7bd;background:transparent;color:var(--soft);font-size:13px}.pending .eyebrow{display:block;margin-bottom:6px}
 .footer{padding:26px 0;display:flex;justify-content:space-between;font:10px var(--mono);color:var(--soft);border-top:1px solid var(--line)}.no-js{background:var(--pale);padding:10px;text-align:center;font-size:12px}
-@media(max-width:1000px){.wrap{width:calc(100% - 56px)}.stage{grid-template-columns:minmax(0,1fr) 280px;gap:28px}.header-inner{gap:20px}nav{gap:18px}}
-@media(max-width:860px){.stage{grid-template-columns:1fr;padding-left:30px}.notes{position:static}.thread{grid-template-columns:1fr 1fr}.thread a:nth-child(2){border:0;margin:0}.thread a:nth-child(-n+2){border-bottom:1px solid var(--line)}.thread a{padding:18px 16px}}
+@media(max-width:1000px){.wrap{width:calc(100% - 56px)}.header-inner{gap:20px}nav{gap:18px}}
+@media(max-width:860px){.stage{padding-left:30px}.thread{grid-template-columns:1fr 1fr}.thread a:nth-child(2){border:0;margin:0}.thread a:nth-child(-n+2){border-bottom:1px solid var(--line)}.thread a{padding:18px 16px}}
 @media(max-width:700px){.wrap{width:calc(100% - 32px)}.header-inner{min-height:72px;gap:12px}.brand{font-size:13px}.languages button{padding:7px 9px}.menu-button{display:block;border:1px solid var(--line);background:none;color:var(--navy);font-size:12px;padding:10px;min-height:44px;border-radius:4px}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--cream);padding:22px;box-shadow:0 10px 20px #1a2f4e15;border-bottom:1px solid var(--line)}nav.open{display:flex;flex-direction:column;gap:0}nav a{padding:12px}.intro{padding:44px 0 24px}.lede{font-size:16px}.groups,.projects{grid-template-columns:1fr}.stack{grid-template-columns:1fr;gap:4px}.stack dd{margin-bottom:10px}.stage{padding:40px 0 40px 22px}.stage:before{top:48px}.footer{font-size:9px;gap:20px}}
 @media(max-width:380px){.thread{grid-template-columns:1fr}.thread a{border-right:0!important;margin:0!important;border-bottom:1px solid var(--line)}.brand{font-size:12px}.languages button{padding:7px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-@media print{header,.thread,.footer{display:none}.notes{position:static}.stage{break-inside:avoid}}
+@media print{header,.thread,.footer{display:none}.stage{break-inside:avoid}}
 </style></head><body>
 <a href="#main" class="skip"><span data-en="Skip to content" data-es="Ir al contenido">Skip to content</span></a>
 <header><div class="wrap header-inner"><a class="brand" href="./" aria-label="ANEDECOS, home">ANEDECOS<i>.</i></a><nav id="navigation" aria-label="Main navigation"><a href="./#experience"><span data-en="Experience" data-es="Experiencia">Experience</span></a><a href="journey.html" aria-current="page"><span data-en="Journey" data-es="Trayectoria">Journey</span></a><a href="./#projects"><span data-en="Projects" data-es="Proyectos">Projects</span></a><a href="./#capabilities"><span data-en="Expertise" data-es="Capacidades">Expertise</span></a><a href="./#contact"><span data-en="Contact" data-es="Contacto">Contact</span></a></nav><div class="languages" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-label="English" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-label="Español" aria-pressed="false">ES</button></div><button type="button" class="menu-button" aria-expanded="false" aria-controls="navigation"><span data-en="Menu" data-es="Menú">Menu</span></button></div></header>
 <noscript><div class="no-js">This page requires JavaScript. Esta página requiere JavaScript. <a href="./">Portfolio ↗</a></div></noscript>
 <main id="main">
-<section class="wrap intro"><div class="eyebrow" data-en="Journey · 2018 - today" data-es="Trayectoria · 2018 - hoy">Journey · 2018 - today</div><h1><span data-en="From callback hell" data-es="Del callback hell">From callback hell</span><br><em data-en="to leading teams." data-es="a liderar equipos.">to leading teams.</em></h1><p class="lede" data-en="How I grew as an engineer, one stage at a time. Each stage lists what I learned and built; the side notes hold the key idea and the short technical answers." data-es="Cómo fui creciendo como ingeniero, etapa por etapa. Cada etapa resume lo que aprendí y construí; las notas laterales guardan la idea clave y las respuestas técnicas cortas.">How I grew as an engineer, one stage at a time.</p><nav class="thread" id="thread" aria-label="Stages"></nav></section>
+<section class="wrap intro"><div class="eyebrow" data-en="Journey · 2018 - today" data-es="Trayectoria · 2018 - hoy">Journey · 2018 - today</div><h1><span data-en="From callback hell" data-es="Del callback hell">From callback hell</span><br><em data-en="to leading teams." data-es="a liderar equipos.">to leading teams.</em></h1><p class="lede" data-en="How I grew as an engineer, one stage at a time: what I learned, what I built and what it achieved." data-es="Cómo fui creciendo como ingeniero, etapa por etapa: qué aprendí, qué construí y qué logré.">How I grew as an engineer, one stage at a time: what I learned, what I built and what it achieved.</p><nav class="thread" id="thread" aria-label="Stages"></nav></section>
 <section class="wrap timeline" id="timeline"></section>
 </main>
 <footer class="wrap footer"><span>© 2026 ANEDECOS</span><a href="./"><span data-en="Back to portfolio" data-es="Volver al portfolio">Back to portfolio</span> ↗</a></footer>
@@ -58,17 +56,6 @@ const STAGES = [
     ['Deployed on AWS: Lambda, EC2, S3 integrations', 'Desplegaba en AWS: Lambda, EC2, integraciones con S3'],
     ['Applied decoupling and design patterns', 'Aplicaba desacoplamiento y patrones de diseño'],
     ['Many concepts and good practices already in place', 'Muchos conceptos y buenas prácticas ya incorporados']]}
-  ],
-  remember: {line: ['Base, engine, protocols, pieces… then owner.', 'Base, motor, idioma, piezas… y ya dueño.'], keys: [
-   [['Base', 'JavaScript in depth'], ['Base', 'JavaScript a fondo']],
-   [['Engine', 'Node, libuv and V8'], ['Motor', 'Node, libuv y V8']],
-   [['Protocols', 'HTTP, WebSocket, gRPC'], ['Idioma', 'HTTP, WebSocket, gRPC']],
-   [['Pieces', 'microservices'], ['Piezas', 'microservicios']],
-   [['Owner', 'AWS and patterns'], ['Dueño', 'AWS y patrones']]]},
-  asked: [
-   {q: ['What is the TDZ?', '¿Qué es la TDZ?'], a: ['let and const exist from the start of their block, but using them before the declaration throws a ReferenceError.', 'let y const existen desde el inicio de su bloque, pero usarlas antes de declararlas lanza un ReferenceError.']},
-   {q: ['Is Node single-threaded?', '¿Node es de un solo hilo?'], a: ['Your JavaScript is, on V8. libuv uses 4 threads for slow work (files, crypto) and the OS signals network events. One chef, four helpers, the OS as waiters.', 'Tu JavaScript sí, en V8. libuv usa 4 hilos para lo lento (archivos, crypto) y el sistema operativo avisa los eventos de red. Un chef, cuatro ayudantes y el SO como meseros.']},
-   {q: ['Why gRPC?', '¿Por qué gRPC?'], a: ['Typed contracts with Protobuf over HTTP/2: fast, compact service-to-service calls.', 'Contratos tipados con Protobuf sobre HTTP/2: llamadas entre servicios rápidas y compactas.']}
   ]
  },
  {
@@ -110,17 +97,6 @@ const STAGES = [
    {name: ['Entity recognition', 'Reconocimiento de entidades'], text: ['Graph Neural Network with embeddings and transformers, before LLMs. Classified unstructured data on its own from a few examples.', 'Graph Neural Network con embeddings y transformers, antes de los LLM. Clasificaba datos no estructurados por sí sola a partir de pocos ejemplos.']},
    {name: ['Central search engine', 'Motor de búsqueda central'], text: ['One search and tracing point for hundreds of disconnected microservices that could not be debugged.', 'Un punto de búsqueda y trazabilidad para cientos de microservicios desconectados que no se podían depurar.']},
    {name: ['Product decisions', 'Decisiones de producto'], text: ['New services and monitors placed in core client flows.', 'Nuevos servicios y monitores ubicados en flujos centrales de los clientes.']}
-  ],
-  remember: {line: ['Mentor, mold, machine, market.', 'Mentor, molde, máquina, mercado.'], keys: [
-   [['Mentor', 'books and guidance'], ['Mentor', 'libros y guía']],
-   [['Mold', 'patterns and paradigm'], ['Molde', 'patrones y paradigma']],
-   [['Machine', 'ML and scale'], ['Máquina', 'ML y escala']],
-   [['Market', 'product decisions'], ['Mercado', 'decisiones de producto']]]},
-  asked: [
-   {q: ['Hexagonal architecture?', '¿Arquitectura hexagonal?'], a: ['Business logic in the center; databases and APIs plug in from outside through ports and adapters.', 'El negocio en el centro; bases de datos y APIs se conectan por fuera mediante puertos y adaptadores.']},
-   {q: ['Dependency injection?', '¿Inyección de dependencias?'], a: ['A module receives its dependencies instead of creating them. Easier to test and to swap.', 'El módulo recibe sus dependencias en lugar de crearlas. Más fácil de probar y de cambiar.']},
-   {q: ['Why Isolation Forest?', '¿Por qué Isolation Forest?'], a: ['Unsupervised: anomalies get isolated with very few random splits, so no labels are needed.', 'No supervisado: las anomalías quedan aisladas con muy pocos cortes aleatorios, sin necesidad de etiquetas.']},
-   {q: ['Why pub/sub?', '¿Por qué pub/sub?'], a: ['The publisher does not know who listens. Services decouple and scale independently.', 'Quien publica no conoce a quien escucha. Los servicios se desacoplan y escalan por separado.']}
   ]
  },
  {
@@ -143,13 +119,6 @@ const STAGES = [
     ['Data correlations', 'Correlaciones de datos'],
     ['Statistical analysis', 'Análisis estadístico'],
     ['Concepts I already knew, now in depth', 'Conceptos que ya conocía, ahora en profundidad']]}
-  ],
-  remember: {line: ['From knowing how to knowing when.', 'De saber hacer a saber decidir.'], keys: [
-   [['How', 'I could already build'], ['Hacer', 'ya sabía construir']],
-   [['When', 'now I choose and own it'], ['Decidir', 'ahora elijo y respondo']]]},
-  asked: [
-   {q: ['What is EDA?', '¿Qué es EDA?'], a: ['Looking at the data before modeling: distributions, missing values, outliers.', 'Mirar los datos antes de modelar: distribuciones, faltantes, valores atípicos.']},
-   {q: ['Correlation?', '¿Correlación?'], a: ['It measures how two variables move together. It is not causation.', 'Mide cómo se mueven juntas dos variables. No implica causalidad.']}
   ]
  },
  {
@@ -179,17 +148,6 @@ const STAGES = [
   projects: [
    {name: ['One platform', 'Una sola plataforma'], text: ['From a ticketing tool to the system that runs the full support lifecycle.', 'De ticketera al sistema que opera todo el ciclo de vida de soporte.'], metric: ['Up to 12 platforms → 1', 'Hasta 12 plataformas → 1']},
    {name: ['OXXO Mexico', 'OXXO México'], text: ['They arrived with the same story: several support platforms and ServiceNow for IT. I presented a unified platform that owns the lifecycle and integrates directly with ServiceNow. They said yes, and feature by feature we displaced ServiceNow.', 'Llegaron con la misma historia: varias plataformas de soporte y ServiceNow para TI. Presenté una plataforma unificada, dueña del ciclo de vida e integrada directamente con ServiceNow. Dieron el sí, y feature a feature fuimos desplazando a ServiceNow.'], metric: ['23,000 stores · 3,000 at 100% on Stefanini Go · the rest at 45-60%', '23.000 tiendas · 3.000 al 100 % en Stefanini Go · el resto entre 45 y 60 %']}
-  ],
-  remember: {line: ['Enter, unify, displace.', 'Entrar, unificar, desplazar.'], keys: [
-   [['Enter', 'a simple ticketing tool'], ['Entrar', 'una ticketera simple']],
-   [['Unify', 'inventory, logistics, scheduling'], ['Unificar', 'inventario, logística, agendamiento']],
-   [['Displace', '12 platforms, then ServiceNow'], ['Desplazar', '12 plataformas, luego ServiceNow']],
-   [['Win', 'OXXO: 23,000 stores, 3,000 at 100%'], ['Ganar', 'OXXO: 23.000 tiendas, 3.000 al 100 %']]]},
-  asked: [
-   {q: ['What is FSM?', '¿Qué es FSM?'], a: ['Field Service Management: managing work orders and technicians in the field.', 'Field Service Management: gestionar órdenes de trabajo y técnicos en terreno.']},
-   {q: ['A ticket-oriented OMS?', '¿Un OMS orientado a tickets?'], a: ['Like an order management system, but each order is a support ticket with its own inventory, logistics and technician.', 'Como un sistema de gestión de pedidos, pero cada pedido es un ticket de soporte con su inventario, logística y técnico.']},
-   {q: ['Why irreplaceable?', '¿Por qué irremplazable?'], a: ['When you own the full lifecycle, replacing you costs more than keeping you.', 'Cuando eres dueño de todo el ciclo de vida, reemplazarte cuesta más que mantenerte.']},
-   {q: ['How did you win OXXO?', '¿Cómo ganaron OXXO?'], a: ['By not asking them to drop ServiceNow on day one: we integrated with it, then took over the flow feature by feature.', 'Sin pedirles que dejaran ServiceNow el primer día: nos integramos con él y luego tomamos el flujo feature a feature.']}
   ]
  }
 ];
@@ -242,27 +200,7 @@ function renderStage(s, i) {
   wrap.append(grid);
   main.append(wrap);
  }
- const notes = el('aside', 'notes', null, {'aria-label': 'Notes'});
- if (s.remember) {
-  const r = el('div', 'note remember');
-  r.append(el('h3', '', ['Remember', 'Para recordar']), el('p', 'mnemonic', s.remember.line));
-  const ul = el('ul');
-  s.remember.keys.forEach(([en, es]) => { const li = el('li'); li.append(el('b', '', [en[0], es[0]]), document.createTextNode(' · '), el('span', '', [en[1], es[1]])); ul.append(li) });
-  r.append(ul);
-  notes.append(r);
- }
- if (s.asked) {
-  const a = el('div', 'note asked');
-  a.append(el('h3', '', ['If they ask', 'Si me preguntan']));
-  s.asked.forEach(x => { const qa = el('div', 'qa'); qa.append(el('p', 'q', x.q), el('p', 'a', x.a)); a.append(qa) });
-  notes.append(a);
- }
- if (s.pending) {
-  const p = el('div', 'note pending');
-  p.append(el('span', 'eyebrow', ['In progress', 'En construcción']), el('span', '', ['Notes for this stage are coming.', 'Las notas de esta etapa vienen en camino.']));
-  notes.append(p);
- }
- article.append(main, notes);
+ article.append(main);
  return article;
 }
 
@@ -288,7 +226,6 @@ function setLanguage(value) {
  document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
  nav.setAttribute('aria-label', lang === 'es' ? 'Navegación principal' : 'Main navigation');
  thread.setAttribute('aria-label', lang === 'es' ? 'Etapas' : 'Stages');
- document.querySelectorAll('.notes').forEach(n => n.setAttribute('aria-label', lang === 'es' ? 'Notas' : 'Notes'));
  document.querySelector('.brand').setAttribute('aria-label', lang === 'es' ? 'ANEDECOS, inicio' : 'ANEDECOS, home');
  document.title = lang === 'es' ? 'Trayectoria | Andrés Echeverry | ANEDECOS' : 'Journey | Andrés Echeverry | ANEDECOS';
  try { localStorage.setItem('portfolio-lang', lang) } catch {}
