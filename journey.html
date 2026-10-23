@@ -1,0 +1,263 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#1A2F4E"><title>Journey | Andrés Echeverry | ANEDECOS</title><meta name="description" content="Andrés Echeverry's engineering journey, from Node.js fundamentals to technical leadership."><link rel="canonical" href="https://anedecos.github.io/portfolio/journey.html"><meta property="og:title" content="Journey | Andrés Echeverry"><meta property="og:description" content="Learn. Consolidate. Decide. Lead."><meta property="og:type" content="website"><meta property="og:url" content="https://anedecos.github.io/portfolio/journey.html"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet"><style>
+:root{--navy:#1A2F4E;--deep:#0F1E36;--sage:#2D6E5E;--pale:#E8F0EC;--cream:#FAF7F2;--line:#D9D6CC;--soft:#46566C;--mint:#BDE3CC;--mono:'JetBrains Mono',monospace;--serif:'Playfair Display',Georgia,serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--cream);color:var(--navy);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}a{color:inherit;text-underline-offset:5px}button{font:inherit;cursor:pointer}a,button{-webkit-tap-highlight-color:transparent}:focus-visible{outline:3px solid #b57d2c;outline-offset:5px}::selection{background:var(--mint);color:var(--deep)}.wrap{width:min(1180px,calc(100% - 96px));margin:auto}
+header{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}.header-inner{min-height:84px;display:flex;align-items:center;gap:32px}.brand{font-family:var(--mono);font-size:16px;font-weight:600;letter-spacing:.12em;text-decoration:none;margin-right:auto}.brand i{font-style:normal;color:var(--sage)}nav{display:flex;gap:27px;font-size:13px}nav a{text-decoration:none}nav a:hover,nav a[aria-current=page]{color:var(--sage)}nav a[aria-current=page]{font-weight:600}.languages{display:flex;gap:3px;border:1px solid var(--line);padding:3px;border-radius:25px}.languages button{border:0;background:none;border-radius:20px;padding:9px 11px;font-family:var(--mono);font-size:11px;min-height:38px;color:var(--navy)}.languages [aria-pressed=true]{background:var(--navy);color:white}.menu-button{display:none}.skip{position:fixed;top:-100px;left:20px;background:var(--navy);color:white;padding:12px;z-index:100}.skip:focus{top:10px}
+.eyebrow{font:11px/1.6 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}h1{font:500 clamp(44px,5.4vw,72px)/1.05 var(--serif);letter-spacing:-.05em;margin:22px 0}h1 em{color:var(--sage);font-weight:500}h2{font:500 clamp(32px,3.6vw,44px)/1.1 var(--serif);letter-spacing:-.035em;margin:10px 0 6px}h3{font:600 11px/1.6 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--sage);margin:0 0 10px}p{margin:0 0 18px}
+.intro{padding:72px 0 40px}.lede{font-size:18px;line-height:1.7;color:var(--soft);max-width:620px}
+.thread{display:grid;grid-template-columns:repeat(4,1fr);border-block:1px solid var(--line);margin-top:40px}.thread a{display:block;padding:22px 20px 22px 0;margin-right:20px;border-right:1px solid var(--line);text-decoration:none}.thread a:last-child{border:0;margin:0}.thread strong{display:block;font:500 26px/1.2 var(--serif);margin:6px 0 2px}.thread span{font-size:12px;color:var(--soft)}.thread a:hover strong{color:var(--sage)}.thread .arrow{color:var(--sage);font-family:var(--mono)}
+.timeline{padding:30px 0 70px}.stage{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:44px;padding:56px 0 56px 44px;border-left:1px solid var(--line)}.stage:before{content:'';position:absolute;left:-8px;top:66px;width:15px;height:15px;border-radius:50%;background:var(--cream);border:3px solid var(--sage)}.stage.current:before{background:var(--sage)}
+.stage-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:4px}.verb{font:600 11px var(--mono);letter-spacing:.12em;text-transform:uppercase;background:var(--navy);color:#fff;padding:5px 9px;border-radius:3px}.company{font-size:15px;font-weight:600}.role{font-size:13px;color:var(--soft)}.stage .summary{font-size:16px;color:var(--soft);max-width:640px;margin-top:14px}
+.groups{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px}.group{border:1px solid var(--line);background:#fffdf9;border-radius:6px;padding:20px 22px}.group.wide{grid-column:1/-1}.group ul{margin:0;padding:0;list-style:none}.group li{font-size:14px;line-height:1.55;padding:5px 0 5px 18px;position:relative}.group li:before{content:'›';position:absolute;left:0;color:var(--sage);font-weight:700}.group li b{font-weight:600}
+.stack{display:grid;grid-template-columns:150px 1fr;gap:10px 18px;align-items:baseline}.stack dt{font:10px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--soft)}.stack dd{margin:0;display:flex;flex-wrap:wrap;gap:6px}.chip{font:11px var(--mono);background:var(--pale);color:var(--deep);border-radius:3px;padding:4px 8px}
+.projects{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}.project{background:var(--navy);color:#fff;border-radius:6px;padding:22px;display:flex;flex-direction:column}.project .num{font:11px var(--mono);color:var(--mint)}.project strong{font:500 21px/1.25 var(--serif);margin:6px 0 8px;display:block}.project p{font-size:13px;color:#d0dae5;margin:0}.project .metric{margin-top:auto;padding-top:14px;border-top:1px solid #50617a;font:500 15px var(--serif);color:var(--mint)}.project .metric:empty{display:none}.project p+.metric{margin-top:16px}
+.notes{display:flex;flex-direction:column;gap:16px;align-self:start;position:sticky;top:110px}.note{border-radius:6px;padding:20px 22px}.note.remember{background:var(--pale);border:1px solid #c5d6cb}.note.asked{background:#fffdf9;border:1px solid var(--line)}.mnemonic{font:500 22px/1.3 var(--serif);margin:0 0 12px}.note ul{margin:0;padding:0;list-style:none}.note li{font-size:13px;line-height:1.5;padding:4px 0;color:var(--soft)}.note li b{color:var(--navy);font-weight:600}.qa{border-top:1px solid var(--line);padding:12px 0}.qa:first-of-type{border-top:0;padding-top:0}.qa:last-child{padding-bottom:0}.qa .q{font-size:13px;font-weight:600;margin:0 0 4px}.qa .a{font-size:13px;color:var(--soft);margin:0;line-height:1.55}
+.pending{border:1px dashed #b9c7bd;background:transparent;color:var(--soft);font-size:13px}.pending .eyebrow{display:block;margin-bottom:6px}
+.footer{padding:26px 0;display:flex;justify-content:space-between;font:10px var(--mono);color:var(--soft);border-top:1px solid var(--line)}.no-js{background:var(--pale);padding:10px;text-align:center;font-size:12px}
+@media(max-width:1000px){.wrap{width:calc(100% - 56px)}.stage{grid-template-columns:minmax(0,1fr) 280px;gap:28px}.header-inner{gap:20px}nav{gap:18px}}
+@media(max-width:860px){.stage{grid-template-columns:1fr;padding-left:30px}.notes{position:static}.thread{grid-template-columns:1fr 1fr}.thread a:nth-child(2){border:0;margin:0}.thread a:nth-child(-n+2){border-bottom:1px solid var(--line)}.thread a{padding:18px 16px}}
+@media(max-width:700px){.wrap{width:calc(100% - 32px)}.header-inner{min-height:72px;gap:12px}.brand{font-size:13px}.languages button{padding:7px 9px}.menu-button{display:block;border:1px solid var(--line);background:none;color:var(--navy);font-size:12px;padding:10px;min-height:44px;border-radius:4px}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--cream);padding:22px;box-shadow:0 10px 20px #1a2f4e15;border-bottom:1px solid var(--line)}nav.open{display:flex;flex-direction:column;gap:0}nav a{padding:12px}.intro{padding:44px 0 24px}.lede{font-size:16px}.groups,.projects{grid-template-columns:1fr}.stack{grid-template-columns:1fr;gap:4px}.stack dd{margin-bottom:10px}.stage{padding:40px 0 40px 22px}.stage:before{top:48px}.footer{font-size:9px;gap:20px}}
+@media(max-width:380px){.thread{grid-template-columns:1fr}.thread a{border-right:0!important;margin:0!important;border-bottom:1px solid var(--line)}.brand{font-size:12px}.languages button{padding:7px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,.thread,.footer{display:none}.notes{position:static}.stage{break-inside:avoid}}
+</style></head><body>
+<a href="#main" class="skip"><span data-en="Skip to content" data-es="Ir al contenido">Skip to content</span></a>
+<header><div class="wrap header-inner"><a class="brand" href="./" aria-label="ANEDECOS, home">ANEDECOS<i>.</i></a><nav id="navigation" aria-label="Main navigation"><a href="./#experience"><span data-en="Experience" data-es="Experiencia">Experience</span></a><a href="journey.html" aria-current="page"><span data-en="Journey" data-es="Trayectoria">Journey</span></a><a href="./#projects"><span data-en="Projects" data-es="Proyectos">Projects</span></a><a href="./#capabilities"><span data-en="Expertise" data-es="Capacidades">Expertise</span></a><a href="./#contact"><span data-en="Contact" data-es="Contacto">Contact</span></a></nav><div class="languages" role="group" aria-label="Language / Idioma"><button type="button" data-lang="en" aria-label="English" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-label="Español" aria-pressed="false">ES</button></div><button type="button" class="menu-button" aria-expanded="false" aria-controls="navigation"><span data-en="Menu" data-es="Menú">Menu</span></button></div></header>
+<noscript><div class="no-js">This page requires JavaScript. Esta página requiere JavaScript. <a href="./">Portfolio ↗</a></div></noscript>
+<main id="main">
+<section class="wrap intro"><div class="eyebrow" data-en="Journey · 2018 - today" data-es="Trayectoria · 2018 - hoy">Journey · 2018 - today</div><h1><span data-en="From callback hell" data-es="Del callback hell">From callback hell</span><br><em data-en="to leading teams." data-es="a liderar equipos.">to leading teams.</em></h1><p class="lede" data-en="How I grew as an engineer, one stage at a time. Each stage lists what I learned and built; the side notes hold the key idea and the short technical answers." data-es="Cómo fui creciendo como ingeniero, etapa por etapa. Cada etapa resume lo que aprendí y construí; las notas laterales guardan la idea clave y las respuestas técnicas cortas.">How I grew as an engineer, one stage at a time.</p><nav class="thread" id="thread" aria-label="Stages"></nav></section>
+<section class="wrap timeline" id="timeline"></section>
+</main>
+<footer class="wrap footer"><span>© 2026 ANEDECOS</span><a href="./"><span data-en="Back to portfolio" data-es="Volver al portfolio">Back to portfolio</span> ↗</a></footer>
+<script>
+// Each text is [en, es]; a plain string is the same in both languages.
+const STAGES = [
+ {
+  id: 'formax', verb: ['Learn', 'Aprender'], title: ['The foundations', 'Los fundamentos'],
+  company: 'Grupo Formax', role: ['Backend Developer', 'Desarrollador Backend'], dates: ['May 2018 - May 2019', 'May 2018 - May 2019'],
+  summary: ['I started in the transition: legacy callback code on Node 6, new code already on async/await with Node 8. Here I learned how JavaScript and Node work underneath.', 'Empecé en la transición: código heredado con callbacks en Node 6 y lo nuevo ya con async/await en Node 8. Aquí aprendí cómo funcionan JavaScript y Node por dentro.'],
+  groups: [
+   {label: ['JavaScript in depth', 'JavaScript a fondo'], items: [
+    ['Hoisting', 'Hoisting'],
+    ['var, let and const: function scope vs. block scope', 'var, let y const: alcance de función vs. de bloque'],
+    ['Temporal Dead Zone (TDZ)', 'Temporal Dead Zone (TDZ)'],
+    ['Callbacks → Promises → async/await', 'Callbacks → Promesas → async/await']]},
+   {label: ['Node.js internals', 'Node.js por dentro'], items: [
+    ['Event loop, provided by libuv', 'Event loop, a cargo de libuv'],
+    ['V8 runs JavaScript on a single thread', 'V8 ejecuta JavaScript en un solo hilo'],
+    ['libuv thread pool: 4 threads by default (fs, crypto, dns, zlib)', 'Pool de libuv: 4 hilos por defecto (fs, crypto, dns, zlib)'],
+    ['Network I/O handled by the OS (epoll, kqueue)', 'Red gestionada por el sistema operativo (epoll, kqueue)']]},
+   {label: ['Protocols', 'Protocolos'], items: [
+    ['HTTP: request and response', 'HTTP: petición y respuesta'],
+    ['WebSocket: persistent two-way channel', 'WebSocket: canal permanente en dos direcciones'],
+    ['gRPC: HTTP/2 and Protobuf between services', 'gRPC: HTTP/2 y Protobuf entre servicios']]},
+   {label: ['First microservices', 'Primeros microservicios'], items: [
+    ['Splitting services by business domain', 'Separar servicios por dominio de negocio'],
+    ['One clear responsibility per service', 'Una responsabilidad clara por servicio']]},
+   {label: ['By year end: system owner', 'Al cierre del año: dueño de sistemas'], wide: true, items: [
+    ['Built and owned systems end to end', 'Construía y era dueño de sistemas de punta a punta'],
+    ['Deployed on AWS: Lambda, EC2, S3 integrations', 'Desplegaba en AWS: Lambda, EC2, integraciones con S3'],
+    ['Applied decoupling and design patterns', 'Aplicaba desacoplamiento y patrones de diseño'],
+    ['Many concepts and good practices already in place', 'Muchos conceptos y buenas prácticas ya incorporados']]}
+  ],
+  remember: {line: ['Base, engine, protocols, pieces… then owner.', 'Base, motor, idioma, piezas… y ya dueño.'], keys: [
+   [['Base', 'JavaScript in depth'], ['Base', 'JavaScript a fondo']],
+   [['Engine', 'Node, libuv and V8'], ['Motor', 'Node, libuv y V8']],
+   [['Protocols', 'HTTP, WebSocket, gRPC'], ['Idioma', 'HTTP, WebSocket, gRPC']],
+   [['Pieces', 'microservices'], ['Piezas', 'microservicios']],
+   [['Owner', 'AWS and patterns'], ['Dueño', 'AWS y patrones']]]},
+  asked: [
+   {q: ['What is the TDZ?', '¿Qué es la TDZ?'], a: ['let and const exist from the start of their block, but using them before the declaration throws a ReferenceError.', 'let y const existen desde el inicio de su bloque, pero usarlas antes de declararlas lanza un ReferenceError.']},
+   {q: ['Is Node single-threaded?', '¿Node es de un solo hilo?'], a: ['Your JavaScript is, on V8. libuv uses 4 threads for slow work (files, crypto) and the OS signals network events. One chef, four helpers, the OS as waiters.', 'Tu JavaScript sí, en V8. libuv usa 4 hilos para lo lento (archivos, crypto) y el sistema operativo avisa los eventos de red. Un chef, cuatro ayudantes y el SO como meseros.']},
+   {q: ['Why gRPC?', '¿Por qué gRPC?'], a: ['Typed contracts with Protobuf over HTTP/2: fast, compact service-to-service calls.', 'Contratos tipados con Protobuf sobre HTTP/2: llamadas entre servicios rápidas y compactas.']}
+  ]
+ },
+ {
+  id: 'omnix', verb: ['Consolidate', 'Consolidar'], title: ['Architecture and AI', 'Arquitectura e IA'],
+  company: 'OmnixAI', role: ['Senior Software Engineer', 'Ingeniero de Software Senior'], dates: ['May 2019 - Apr 2023', 'May 2019 - Abr 2023'],
+  summary: ['Here I consolidated my technical base and moved into AI. A great mentor gave me the resources to start building from an architecture and paradigm point of view. By the end, my way of building software had changed.', 'Aquí consolidé mi base técnica y entré a la IA. Un gran mentor me dio los recursos para empezar a construir desde la arquitectura y el paradigma. Al final del rol, mi forma de construir software había cambiado.'],
+  groups: [
+   {label: ['Mentorship', 'Mentoría'], items: [
+    ['Clean Code', 'Clean Code'],
+    ['Design patterns', 'Patrones de diseño'],
+    ['From writing code to designing systems', 'De escribir código a diseñar sistemas']]},
+   {label: ['Paradigm', 'Paradigma'], items: [
+    ['Knowing which tool to use and when', 'Saber qué herramienta usar y cuándo'],
+    ['Inversion of control and dependency injection', 'Inversión de control e inyección de dependencias'],
+    ['Modularization for maintainability and scale', 'Modularización pensada para mantenibilidad y escala'],
+    ['Hexagonal architecture (ports and adapters)', 'Arquitectura hexagonal (puertos y adaptadores)']]},
+   {label: ['Scalable architecture', 'Arquitectura escalable'], items: [
+    ['Queues to decouple services', 'Colas para desacoplar servicios'],
+    ['Pub/sub pattern', 'Patrón pub/sub'],
+    ['Function optimization with profiling', 'Optimización de funciones con profiling'],
+    ['Scaling by resources: CPU, memory, pods', 'Escalar por recursos: CPU, memoria, pods']]},
+   {label: ['Applied AI', 'IA aplicada'], items: [
+    ['Supervised and unsupervised ML', 'ML supervisado y no supervisado'],
+    ['Feature engineering and anomaly detection', 'Feature engineering y detección de anomalías'],
+    ['Embeddings and transformers, before LLMs', 'Embeddings y transformers, antes de los LLM'],
+    ['Graph Neural Networks and few-shot learning', 'Graph Neural Networks y few-shot learning']]},
+   {label: ['Stack', 'Stack'], wide: true, stack: [
+    [['Languages', 'Lenguajes'], ['TypeScript', 'NestJS', 'Python', 'Go']],
+    [['Data', 'Datos'], ['PostgreSQL', 'MongoDB', 'Elasticsearch']],
+    [['Containers', 'Contenedores'], ['Docker', 'Kubernetes', ['Manifests', 'Manifiestos'], 'ArgoCD']],
+    [['AWS', 'AWS'], ['Lambda', 'SQS', 'SNS', 'S3', 'Cognito', 'EC2', 'EKS']]]},
+   {label: ['Product vision', 'Visión de producto'], wide: true, items: [
+    ['Proposed new services, apps and monitors for clients', 'Propuse nuevos servicios, apps y monitores para clientes'],
+    ['Each one solved a specific business problem', 'Cada uno resolvía un problema específico del negocio'],
+    ['Strategy: work so well inside a core business flow that replacing you costs more than keeping you', 'Estrategia: funcionar tan bien dentro de un flujo central del negocio que reemplazarte cueste más que mantenerte']]}
+  ],
+  projects: [
+   {name: ['Delayed orders', 'Pedidos atrasados'], text: ['Isolation Forest with feature engineering on historical logistics data.', 'Isolation Forest con feature engineering sobre datos históricos de logística.'], metric: ['+20% delayed orders detected', '+20 % de pedidos atrasados detectados']},
+   {name: ['Entity recognition', 'Reconocimiento de entidades'], text: ['Graph Neural Network with embeddings and transformers, before LLMs. Classified unstructured data on its own from a few examples.', 'Graph Neural Network con embeddings y transformers, antes de los LLM. Clasificaba datos no estructurados por sí sola a partir de pocos ejemplos.']},
+   {name: ['Central search engine', 'Motor de búsqueda central'], text: ['One search and tracing point for hundreds of disconnected microservices that could not be debugged.', 'Un punto de búsqueda y trazabilidad para cientos de microservicios desconectados que no se podían depurar.']},
+   {name: ['Product decisions', 'Decisiones de producto'], text: ['New services and monitors placed in core client flows.', 'Nuevos servicios y monitores ubicados en flujos centrales de los clientes.']}
+  ],
+  remember: {line: ['Mentor, mold, machine, market.', 'Mentor, molde, máquina, mercado.'], keys: [
+   [['Mentor', 'books and guidance'], ['Mentor', 'libros y guía']],
+   [['Mold', 'patterns and paradigm'], ['Molde', 'patrones y paradigma']],
+   [['Machine', 'ML and scale'], ['Máquina', 'ML y escala']],
+   [['Market', 'product decisions'], ['Mercado', 'decisiones de producto']]]},
+  asked: [
+   {q: ['Hexagonal architecture?', '¿Arquitectura hexagonal?'], a: ['Business logic in the center; databases and APIs plug in from outside through ports and adapters.', 'El negocio en el centro; bases de datos y APIs se conectan por fuera mediante puertos y adaptadores.']},
+   {q: ['Dependency injection?', '¿Inyección de dependencias?'], a: ['A module receives its dependencies instead of creating them. Easier to test and to swap.', 'El módulo recibe sus dependencias en lugar de crearlas. Más fácil de probar y de cambiar.']},
+   {q: ['Why Isolation Forest?', '¿Por qué Isolation Forest?'], a: ['Unsupervised: anomalies get isolated with very few random splits, so no labels are needed.', 'No supervisado: las anomalías quedan aisladas con muy pocos cortes aleatorios, sin necesidad de etiquetas.']},
+   {q: ['Why pub/sub?', '¿Por qué pub/sub?'], a: ['The publisher does not know who listens. Services decouple and scale independently.', 'Quien publica no conoce a quien escucha. Los servicios se desacoplan y escalan por separado.']}
+  ]
+ },
+ {
+  id: 'millerknoll', verb: ['Decide', 'Decidir'], title: ['Paradigm and ownership', 'Paradigma y ownership'],
+  company: 'MillerKnoll', role: ['Senior Full Stack Developer', 'Desarrollador Full Stack Senior'], dates: ['Apr 2023 - May 2024', 'Abr 2023 - May 2024'],
+  summary: ['I consolidated my way of working as an engineer: more paradigm, more decisions, more ownership.', 'Consolidé mi forma de trabajar como ingeniero: más paradigma, más decisiones, más ownership.'],
+  groups: [
+   {label: ['Engineering', 'Ingeniería'], items: [
+    ['Paradigm-driven software engineering', 'Ingeniería de software guiada por paradigmas'],
+    ['Architecture and technical decisions', 'Decisiones técnicas y de arquitectura'],
+    ['Full ownership of development', 'Ownership completo del desarrollo']]},
+   {label: ['Compass', 'Compass'], items: [
+    ['Furniture-layout optimization from CAD plans', 'Optimización de mobiliario desde planos CAD'],
+    ['Genetic algorithms and stochastic search', 'Algoritmos genéticos y búsqueda estocástica'],
+    ['3D visualization for buildings with hundreds of spaces', 'Visualización 3D para edificios con cientos de espacios']]},
+   {label: ['MIT · Applied Data Science (2023, 12 weeks)', 'MIT · Ciencia de Datos Aplicada (2023, 12 semanas)'], wide: true, items: [
+    ['Exploratory data analysis (EDA)', 'Análisis exploratorio de datos (EDA)'],
+    ['Data correlations', 'Correlaciones de datos'],
+    ['Statistical analysis', 'Análisis estadístico'],
+    ['Concepts I already knew, now in depth', 'Conceptos que ya conocía, ahora en profundidad']]}
+  ],
+  remember: {line: ['From knowing how to knowing when.', 'De saber hacer a saber decidir.'], keys: [
+   [['How', 'I could already build'], ['Hacer', 'ya sabía construir']],
+   [['When', 'now I choose and own it'], ['Decidir', 'ahora elijo y respondo']]]},
+  asked: [
+   {q: ['What is EDA?', '¿Qué es EDA?'], a: ['Looking at the data before modeling: distributions, missing values, outliers.', 'Mirar los datos antes de modelar: distribuciones, faltantes, valores atípicos.']},
+   {q: ['Correlation?', '¿Correlación?'], a: ['It measures how two variables move together. It is not causation.', 'Mide cómo se mueven juntas dos variables. No implica causalidad.']}
+  ]
+ },
+ {
+  id: 'stefanini', current: true, verb: ['Lead', 'Liderar'], title: ['Technical leadership', 'Liderazgo técnico'],
+  company: 'Stefanini LATAM', role: ['Technical Lead', 'Líder Técnico'], dates: ['Apr 2023 - present', 'Abr 2023 - presente'],
+  summary: ['Stefanini Go: logistics, inventory and field operations connected by an AI-agent layer. OXXO: bidirectional ServiceNow integration and modernization of 10 microservices.', 'Stefanini Go: logística, inventario y operaciones de campo conectados por una capa de agentes de IA. OXXO: integración bidireccional con ServiceNow y modernización de 10 microservicios.'],
+  pending: true
+ }
+];
+
+const lang0 = () => { try { return localStorage.getItem('portfolio-lang') === 'es' ? 'es' : 'en' } catch { return 'en' } };
+const pair = t => typeof t === 'string' ? [t, t] : t;
+function el(tag, cls, text, attrs = {}) {
+ const node = document.createElement(tag);
+ if (cls) node.className = cls;
+ if (text != null) { const [en, es] = pair(text); node.dataset.en = en; node.dataset.es = es; node.textContent = en }
+ Object.entries(attrs).forEach(([k, v]) => node.setAttribute(k, v));
+ return node;
+}
+const list = items => { const ul = el('ul'); items.forEach(i => ul.append(el('li', '', i))); return ul };
+
+function renderStage(s, i) {
+ const article = el('article', 'stage' + (s.current ? ' current' : ''), null, {id: s.id});
+ const main = el('div');
+ const head = el('div', 'stage-head');
+ head.append(el('span', 'verb', s.verb), el('span', 'eyebrow', s.dates));
+ main.append(head, el('h2', '', s.title));
+ const who = el('div');
+ who.append(el('span', 'company', s.company), document.createTextNode(' · '), el('span', 'role', s.role));
+ main.append(who, el('p', 'summary', s.summary));
+ if (s.groups) {
+  const groups = el('div', 'groups');
+  s.groups.forEach(g => {
+   const box = el('div', 'group' + (g.wide ? ' wide' : ''));
+   box.append(el('h3', '', g.label));
+   if (g.stack) {
+    const dl = el('dl', 'stack');
+    g.stack.forEach(([label, chips]) => { const dd = el('dd'); chips.forEach(c => dd.append(el('span', 'chip', c))); dl.append(el('dt', '', label), dd) });
+    box.append(dl);
+   } else box.append(list(g.items));
+   groups.append(box);
+  });
+  main.append(groups);
+ }
+ if (s.projects) {
+  const wrap = el('div', 'group wide');
+  wrap.style.marginTop = '16px';
+  wrap.append(el('h3', '', ['Key projects', 'Proyectos clave']));
+  const grid = el('div', 'projects');
+  s.projects.forEach((p, n) => {
+   const card = el('div', 'project');
+   card.append(el('span', 'num', '0' + (n + 1)), el('strong', '', p.name), el('p', '', p.text));
+   if (p.metric) card.append(el('span', 'metric', p.metric));
+   grid.append(card);
+  });
+  wrap.append(grid);
+  main.append(wrap);
+ }
+ const notes = el('aside', 'notes', null, {'aria-label': 'Notes'});
+ if (s.remember) {
+  const r = el('div', 'note remember');
+  r.append(el('h3', '', ['Remember', 'Para recordar']), el('p', 'mnemonic', s.remember.line));
+  const ul = el('ul');
+  s.remember.keys.forEach(([en, es]) => { const li = el('li'); li.append(el('b', '', [en[0], es[0]]), document.createTextNode(' · '), el('span', '', [en[1], es[1]])); ul.append(li) });
+  r.append(ul);
+  notes.append(r);
+ }
+ if (s.asked) {
+  const a = el('div', 'note asked');
+  a.append(el('h3', '', ['If they ask', 'Si me preguntan']));
+  s.asked.forEach(x => { const qa = el('div', 'qa'); qa.append(el('p', 'q', x.q), el('p', 'a', x.a)); a.append(qa) });
+  notes.append(a);
+ }
+ if (s.pending) {
+  const p = el('div', 'note pending');
+  p.append(el('span', 'eyebrow', ['In progress', 'En construcción']), el('span', '', ['Notes for this stage are coming.', 'Las notas de esta etapa vienen en camino.']));
+  notes.append(p);
+ }
+ article.append(main, notes);
+ return article;
+}
+
+const thread = document.getElementById('thread');
+STAGES.forEach((s, i) => {
+ const a = el('a', '', null, {href: '#' + s.id});
+ a.append(el('span', 'arrow', '0' + (i + 1) + (i < STAGES.length - 1 ? ' →' : '')), el('strong', '', s.verb), el('span', '', s.title));
+ thread.append(a);
+ document.getElementById('timeline').append(renderStage(s, i));
+});
+
+const menu = document.querySelector('.menu-button');
+const nav = document.getElementById('navigation');
+const closeMenu = () => { nav.classList.remove('open'); menu.setAttribute('aria-expanded', 'false') };
+menu.addEventListener('click', () => { const open = menu.getAttribute('aria-expanded') !== 'true'; menu.setAttribute('aria-expanded', String(open)); nav.classList.toggle('open', open) });
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+document.addEventListener('keydown', e => { if (e.key === 'Escape' && nav.classList.contains('open')) { closeMenu(); menu.focus() } });
+matchMedia('(min-width:701px)').addEventListener('change', closeMenu);
+function setLanguage(value) {
+ const lang = value === 'es' ? 'es' : 'en';
+ document.documentElement.lang = lang;
+ document.querySelectorAll('[data-en]').forEach(node => node.textContent = node.dataset[lang]);
+ document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.lang === lang)));
+ nav.setAttribute('aria-label', lang === 'es' ? 'Navegación principal' : 'Main navigation');
+ thread.setAttribute('aria-label', lang === 'es' ? 'Etapas' : 'Stages');
+ document.querySelectorAll('.notes').forEach(n => n.setAttribute('aria-label', lang === 'es' ? 'Notas' : 'Notes'));
+ document.querySelector('.brand').setAttribute('aria-label', lang === 'es' ? 'ANEDECOS, inicio' : 'ANEDECOS, home');
+ document.title = lang === 'es' ? 'Trayectoria | Andrés Echeverry | ANEDECOS' : 'Journey | Andrés Echeverry | ANEDECOS';
+ try { localStorage.setItem('portfolio-lang', lang) } catch {}
+}
+setLanguage(lang0());
+document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.lang)));
+</script>
+</body></html>
