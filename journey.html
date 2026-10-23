@@ -126,16 +126,18 @@ const STAGES = [
  {
   id: 'millerknoll', verb: ['Decide', 'Decidir'], title: ['Paradigm and ownership', 'Paradigma y ownership'],
   company: 'MillerKnoll', role: ['Senior Full Stack Developer', 'Desarrollador Full Stack Senior'], dates: ['Apr 2023 - May 2024', 'Abr 2023 - May 2024'],
-  summary: ['I consolidated my way of working as an engineer: more paradigm, more decisions, more ownership.', 'Consolidé mi forma de trabajar como ingeniero: más paradigma, más decisiones, más ownership.'],
+  summary: ['One year building optimization systems, very hands-on across the stack. I consolidated my way of working as an engineer: more paradigm, more decisions, more ownership.', 'Un año construyendo sistemas de optimización, muy hands-on en todo el stack. Consolidé mi forma de trabajar como ingeniero: más paradigma, más decisiones, más ownership.'],
   groups: [
-   {label: ['Engineering', 'Ingeniería'], items: [
-    ['Paradigm-driven software engineering', 'Ingeniería de software guiada por paradigmas'],
+   {label: ['Hands-on engineering', 'Ingeniería hands-on'], items: [
+    ['Backend and frontend development', 'Desarrollo backend y frontend'],
     ['Architecture and technical decisions', 'Decisiones técnicas y de arquitectura'],
-    ['Full ownership of development', 'Ownership completo del desarrollo']]},
-   {label: ['Compass', 'Compass'], items: [
-    ['Furniture-layout optimization from CAD plans', 'Optimización de mobiliario desde planos CAD'],
+    ['Full ownership of development', 'Ownership completo del desarrollo'],
+    ['Paradigm-driven software engineering', 'Ingeniería de software guiada por paradigmas']]},
+   {label: ['Compass: layout optimization', 'Compass: optimización de distribución'], items: [
+    ['Furniture distribution optimized on 2D floor maps', 'Distribución de mobiliario optimizada sobre mapas 2D'],
     ['Genetic algorithms and stochastic search', 'Algoritmos genéticos y búsqueda estocástica'],
-    ['3D visualization for buildings with hundreds of spaces', 'Visualización 3D para edificios con cientos de espacios']]},
+    ['Decision trees and statistical models', 'Árboles de decisión y modelos estadísticos'],
+    ['Buildings with hundreds of spaces', 'Edificios con cientos de espacios']]},
    {label: ['MIT · Applied Data Science (2023, 12 weeks)', 'MIT · Ciencia de Datos Aplicada (2023, 12 semanas)'], wide: true, items: [
     ['Exploratory data analysis (EDA)', 'Análisis exploratorio de datos (EDA)'],
     ['Data correlations', 'Correlaciones de datos'],
@@ -153,12 +155,46 @@ const STAGES = [
  {
   id: 'stefanini', current: true, verb: ['Lead', 'Liderar'], title: ['Technical leadership', 'Liderazgo técnico'],
   company: 'Stefanini LATAM', role: ['Technical Lead', 'Líder Técnico'], dates: ['Apr 2023 - present', 'Abr 2023 - presente'],
-  summary: ['Stefanini Go: logistics, inventory and field operations connected by an AI-agent layer. OXXO: bidirectional ServiceNow integration and modernization of 10 microservices.', 'Stefanini Go: logística, inventario y operaciones de campo conectados por una capa de agentes de IA. OXXO: integración bidireccional con ServiceNow y modernización de 10 microservicios.'],
-  pending: true
+  summary: ['I joined as Tech Lead to lead Stefanini Go when it was just starting. I proposed a strategy to make it irreplaceable, and I have carried it out ever since.', 'Llegué como Tech Lead para liderar Stefanini Go cuando recién comenzaba. Propuse una estrategia para volverlo irremplazable y la he llevado a cabo desde entonces.'],
+  groups: [
+   {label: ['Starting point', 'Punto de partida'], items: [
+    ['A field service management (FSM) tool', 'Una herramienta de field service management (FSM)'],
+    ['Basically a ticketing system to organize field technicians', 'Básicamente una ticketera para organizar técnicos en terreno'],
+    ['Goal: stop paying very large licenses', 'Objetivo: dejar de pagar licencias muy costosas']]},
+   {label: ['The problem', 'El problema'], items: [
+    ['The company and its clients used 5, 10, even 12 platforms', 'La empresa y sus clientes usaban 5, 10 y hasta 12 plataformas'],
+    ['All of them for one single support lifecycle', 'Todas para un mismo ciclo de vida de soporte']]},
+   {label: ['Strategic proposal', 'Propuesta estratégica'], items: [
+    ['Turn Stefanini Go into an irreplaceable system', 'Convertir Stefanini Go en un sistema irremplazable'],
+    ['Own the full lifecycle, not just one step', 'Ser dueños del ciclo de vida completo, no de un paso']]},
+   {label: ['What I designed', 'Lo que diseñé'], items: [
+    ['Inventory, logistics and scheduling', 'Inventario, logística y agendamiento'],
+    ['Like an OMS, but ticket-oriented', 'Como un OMS, pero orientado a tickets'],
+    ['An AI-agent layer connecting operations', 'Una capa de agentes de IA que conecta las operaciones']]},
+   {label: ['Result', 'Resultado'], wide: true, items: [
+    ['We replaced those platforms one by one', 'Fuimos reemplazando esas plataformas una a una'],
+    ['Today the company and its clients run the whole hardware support lifecycle in Stefanini Go', 'Hoy la empresa y sus clientes usan Stefanini Go en todo el ciclo de vida de soporte técnico de hardware'],
+    ['One single platform', 'Una sola plataforma']]}
+  ],
+  projects: [
+   {name: ['One platform', 'Una sola plataforma'], text: ['From a ticketing tool to the system that runs the full support lifecycle.', 'De ticketera al sistema que opera todo el ciclo de vida de soporte.'], metric: ['Up to 12 platforms → 1', 'Hasta 12 plataformas → 1']},
+   {name: ['OXXO Mexico', 'OXXO México'], text: ['They arrived with the same story: several support platforms and ServiceNow for IT. I presented a unified platform that owns the lifecycle and integrates directly with ServiceNow. They said yes, and feature by feature we displaced ServiceNow.', 'Llegaron con la misma historia: varias plataformas de soporte y ServiceNow para TI. Presenté una plataforma unificada, dueña del ciclo de vida e integrada directamente con ServiceNow. Dieron el sí, y feature a feature fuimos desplazando a ServiceNow.'], metric: ['23,000 stores · 3,000 at 100% on Stefanini Go · the rest at 45-60%', '23.000 tiendas · 3.000 al 100 % en Stefanini Go · el resto entre 45 y 60 %']}
+  ],
+  remember: {line: ['Enter, unify, displace.', 'Entrar, unificar, desplazar.'], keys: [
+   [['Enter', 'a simple ticketing tool'], ['Entrar', 'una ticketera simple']],
+   [['Unify', 'inventory, logistics, scheduling'], ['Unificar', 'inventario, logística, agendamiento']],
+   [['Displace', '12 platforms, then ServiceNow'], ['Desplazar', '12 plataformas, luego ServiceNow']],
+   [['Win', 'OXXO: 23,000 stores, 3,000 at 100%'], ['Ganar', 'OXXO: 23.000 tiendas, 3.000 al 100 %']]]},
+  asked: [
+   {q: ['What is FSM?', '¿Qué es FSM?'], a: ['Field Service Management: managing work orders and technicians in the field.', 'Field Service Management: gestionar órdenes de trabajo y técnicos en terreno.']},
+   {q: ['A ticket-oriented OMS?', '¿Un OMS orientado a tickets?'], a: ['Like an order management system, but each order is a support ticket with its own inventory, logistics and technician.', 'Como un sistema de gestión de pedidos, pero cada pedido es un ticket de soporte con su inventario, logística y técnico.']},
+   {q: ['Why irreplaceable?', '¿Por qué irremplazable?'], a: ['When you own the full lifecycle, replacing you costs more than keeping you.', 'Cuando eres dueño de todo el ciclo de vida, reemplazarte cuesta más que mantenerte.']},
+   {q: ['How did you win OXXO?', '¿Cómo ganaron OXXO?'], a: ['By not asking them to drop ServiceNow on day one: we integrated with it, then took over the flow feature by feature.', 'Sin pedirles que dejaran ServiceNow el primer día: nos integramos con él y luego tomamos el flujo feature a feature.']}
+  ]
  }
 ];
 
-const lang0 = () => { try { return localStorage.getItem('portfolio-lang') === 'es' ? 'es' : 'en' } catch { return 'en' } };
+const lang0 = () => { const q = new URLSearchParams(location.search).get('lang'); if (q === 'es' || q === 'en') return q; try { return localStorage.getItem('portfolio-lang') === 'es' ? 'es' : 'en' } catch { return 'en' } };
 const pair = t => typeof t === 'string' ? [t, t] : t;
 function el(tag, cls, text, attrs = {}) {
  const node = document.createElement(tag);
@@ -259,5 +295,6 @@ function setLanguage(value) {
 }
 setLanguage(lang0());
 document.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => setLanguage(b.dataset.lang)));
+if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
 </script>
 </body></html>
